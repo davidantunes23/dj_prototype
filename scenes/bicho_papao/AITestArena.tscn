@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://dfp1n3fumsr43"]
+
+[ext_resource type="Script" uid="uid://cdmuvyfy8fnv3" path="res://scripts/bicho_papao/placeholder_player.gd" id="1_6mklk"]
+[ext_resource type="Texture2D" uid="uid://d1r6iwsq05ua5" path="res://icon.svg" id="1_kgjjg"]
+[ext_resource type="PackedScene" uid="uid://hjn7w2f75iht" path="res://scenes/bicho_papao/bicho_papao.tscn" id="2_6q7b0"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dksfx"]
+vertices = PackedVector2Array(330, 571, 1143.9609, 636.0078, 9.09375, 637.97656, 70, 571, 1142.0313, 10, 1025, 415, 1025, 155, 14.8984375, 10.9921875, 70, 519, 957, 155, 957, 415, 330, 519)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 5, 6), PackedInt32Array(3, 2, 7, 8), PackedInt32Array(7, 4, 6, 9), PackedInt32Array(10, 5, 1, 0, 11), PackedInt32Array(11, 8, 7, 9, 10)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(5, 1, 1152, 0, 1154, 646, -1, 648)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh0q7"]
+size = Vector2(240, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
+size = Vector2(48, 240)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh0q7"]
+radius = 32.0
+
+[node name="AiTestArena" type="Node2D" unique_id=814910200]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=229501723]
+navigation_polygon = SubResource("NavigationPolygon_dksfx")
+
+[node name="Wall" type="StaticBody2D" parent="NavigationRegion2D" unique_id=227967970]
+position = Vector2(200, 545)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Wall" unique_id=364118300]
+shape = SubResource("RectangleShape2D_kh0q7")
+
+[node name="Wall2" type="StaticBody2D" parent="NavigationRegion2D" unique_id=908088057]
+position = Vector2(991, 285)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Wall2" unique_id=690301326]
+shape = SubResource("RectangleShape2D_pe5hr")
+
+[node name="PatrolPath" type="Node2D" parent="." unique_id=1933475490]
+
+[node name="Point1" type="Marker2D" parent="PatrolPath" unique_id=627573042]
+position = Vector2(128, 64)
+
+[node name="Point2" type="Marker2D" parent="PatrolPath" unique_id=225688262]
+position = Vector2(832, 64)
+
+[node name="Point3" type="Marker2D" parent="PatrolPath" unique_id=128966]
+position = Vector2(832, 512)
+
+[node name="PlaceholderPlayer" type="CharacterBody2D" parent="." unique_id=882424311 groups=["player"]]
+position = Vector2(312, 240)
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_6mklk")
+speed = 180.0
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PlaceholderPlayer" unique_id=1685408851]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_kgjjg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceholderPlayer" unique_id=2051351670]
+shape = SubResource("CircleShape2D_kh0q7")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=476025231]
+position = Vector2(576, 328)
+
+[node name="BichoPapao" parent="." unique_id=1463987459 instance=ExtResource("2_6q7b0")]
+position = Vector2(849, 518)
+scale = Vector2(0.5, 0.5)
+patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2"), NodePath("../PatrolPath/Point3")])

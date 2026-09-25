@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://hjn7w2f75iht"]
+
+[ext_resource type="Script" uid="uid://bfdkj1m2ink0j" path="res://scripts/bicho_papao/bicho_papao.gd" id="1_j0q6a"]
+[ext_resource type="Texture2D" uid="uid://d1r6iwsq05ua5" path="res://icon.svg" id="1_nklks"]
+[ext_resource type="Script" uid="uid://dgok804oxioi6" path="res://scripts/bicho_papao/state_machine.gd" id="3_fryms"]
+[ext_resource type="Script" uid="uid://c2isq8vxiiped" path="res://scripts/bicho_papao/patrol_state.gd" id="4_edc1c"]
+[ext_resource type="Script" uid="uid://4u6ui4tvwtcp" path="res://scripts/bicho_papao/chase_state.gd" id="5_fryms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lytnn"]
+radius = 62.072536
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nklks"]
+radius = 590.0415
+
+[node name="BichoPapao" type="CharacterBody2D" unique_id=1463987459]
+script = ExtResource("1_j0q6a")
+speed = 200.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=214685243]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("1_nklks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382259615]
+shape = SubResource("CircleShape2D_lytnn")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1868315761]
+
+[node name="VisionArea" type="Area2D" parent="." unique_id=1630113369]
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" unique_id=607787583]
+shape = SubResource("CircleShape2D_nklks")
+debug_color = Color(0.7, 0.23799998, 0.23799998, 0.41960785)
+
+[node name="LineOfSightRay" type="RayCast2D" parent="." unique_id=1943849056]
+
+[node name="StateMachine" type="Node" parent="." unique_id=1255647102 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_fryms")
+initial_state = NodePath("Patrol")
+
+[node name="Patrol" type="Node" parent="StateMachine" unique_id=249549773]
+script = ExtResource("4_edc1c")
+
+[node name="Investigate" type="Node" parent="StateMachine" unique_id=145642655]
+
+[node name="Search" type="Node" parent="StateMachine" unique_id=71356285]
+
+[node name="Chase" type="Node" parent="StateMachine" unique_id=1125186309]
+script = ExtResource("5_fryms")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014662280]
+
+[node name="DebugLabel" type="Label" parent="." unique_id=1132710934]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
