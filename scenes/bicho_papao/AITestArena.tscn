@@ -51,9 +51,7 @@ position = Vector2(832, 512)
 [node name="PlaceholderPlayer" type="CharacterBody2D" parent="." unique_id=882424311 groups=["player"]]
 position = Vector2(312, 240)
 collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_6mklk")
-speed = 180.0
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="PlaceholderPlayer" unique_id=1685408851]

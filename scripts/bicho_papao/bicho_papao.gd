@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 @export_group("Movement")
-@export var speed: float = 120.0
-@export var chase_speed: float = 180.0
+@export var speed: float = 180.0
+@export var chase_speed: float = 200.0
 
 @export_group("Patrol")
 @export var patrol_points: Array[NodePath] = []
@@ -26,7 +26,7 @@ func _setup_navigation() -> void:
 func can_see_player() -> bool:
 	if not is_instance_valid(player):
 		return false
-		
+	
 	# Point the RayCast towards the player's center
 	los_ray.global_position = global_position
 	los_ray.target_position = los_ray.to_local(player.global_position)

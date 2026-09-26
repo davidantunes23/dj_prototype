@@ -13,8 +13,10 @@ radius = 62.072536
 radius = 590.0415
 
 [node name="BichoPapao" type="CharacterBody2D" unique_id=1463987459]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_j0q6a")
-speed = 200.0
+chase_speed = 220.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=214685243]
 modulate = Color(1, 0, 0, 1)
@@ -26,14 +28,14 @@ shape = SubResource("CircleShape2D_lytnn")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1868315761]
 
 [node name="VisionArea" type="Area2D" parent="." unique_id=1630113369]
-collision_layer = 2
-collision_mask = 3
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" unique_id=607787583]
 shape = SubResource("CircleShape2D_nklks")
 debug_color = Color(0.7, 0.23799998, 0.23799998, 0.41960785)
 
 [node name="LineOfSightRay" type="RayCast2D" parent="." unique_id=1943849056]
+collision_mask = 3
 
 [node name="StateMachine" type="Node" parent="." unique_id=1255647102 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_fryms")
