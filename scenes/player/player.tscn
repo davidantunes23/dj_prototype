@@ -1,17 +1,39 @@
 [gd_scene format=3 uid="uid://che5h633bo7b3"]
 
-[ext_resource type="Texture2D" uid="uid://d1r6iwsq05ua5" path="res://icon.svg" id="1_8afob"]
-[ext_resource type="Script" uid="uid://cvhgnfp77scgy" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="Script" uid="uid://bcjyfbgh0s0to" path="res://scripts/player/player.gd" id="1_dovo2"]
+[ext_resource type="Texture2D" uid="uid://d1r6iwsq05ua5" path="res://icon.svg" id="2_gmlin"]
+[ext_resource type="Texture2D" uid="uid://2gfwylpnh5y0" path="res://scenes/player/radial_light.webp" id="3_gmlin"]
+[ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="4_lvxji"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(128, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtoc"]
+size = Vector2(16, 16)
 
-[node name="Player" type="CharacterBody2D" unique_id=1324470800]
+[node name="Player" type="CharacterBody2D" unique_id=800565437]
 script = ExtResource("1_dovo2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1129884994]
-shape = SubResource("RectangleShape2D_dovo2")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=454151562]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_gmlin")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1984622409]
-rotation = 1.5707964
-texture = ExtResource("1_8afob")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1740685498]
+shape = SubResource("RectangleShape2D_uwtoc")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=685623581]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+
+[node name="AmbientRadius" type="PointLight2D" parent="." unique_id=1085767775]
+scale = Vector2(0.2, 0.2)
+color = Color(0.7121294, 0.7121294, 0.71212935, 1)
+texture = ExtResource("3_gmlin")
+
+[node name="ArmPivot" type="Marker2D" parent="." unique_id=1378185465]
+
+[node name="FlashlightCone" type="PointLight2D" parent="ArmPivot" unique_id=735155276]
+position = Vector2(10, 0)
+scale = Vector2(0.19166666, 0.2)
+color = Color(0.7121294, 0.7121294, 0.71212935, 1)
+shadow_enabled = true
+texture = ExtResource("4_lvxji")
+offset = Vector2(300, 0)
+
