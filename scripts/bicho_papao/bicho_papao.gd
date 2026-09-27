@@ -10,15 +10,26 @@ extends CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var vision_area: Area2D = $VisionArea
 @onready var los_ray: RayCast2D = $LineOfSightRay
+@onready var animated_sprite = $AnimatedSprite2D
 
 var player: Node2D = null
 var last_player_position: Vector2
+var facing_direction := "down"
 
 func _ready() -> void:
 	call_deferred("_setup_navigation")
 	
 	vision_area.body_entered.connect(_on_vision_area_body_entered)
 	vision_area.body_exited.connect(_on_vision_area_body_exited)
+
+func _direction_to_string(dir: Vector2) -> String:
+	# Collapses the input vector into one of the 4 cardinal directions,
+	# favoring whichever axis has the larger magnitude (so diagonal input
+	# still picks a single up/down/left/right animation).
+	if abs(dir.x) > abs(dir.y):
+		return "right" if dir.x > 0 else "left"
+	else:
+		return "down" if dir.y > 0 else "up"
 
 func _setup_navigation() -> void:
 	await get_tree().physics_frame
@@ -56,13 +67,18 @@ func execute_movement(custom_speed: float = -1.0) -> void:
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
-
+ 
 	var move_speed = custom_speed if custom_speed > 0 else speed
 	var current_pos: Vector2 = global_position
 	var next_path_pos: Vector2 = nav_agent.get_next_path_position()
-	
-	velocity = current_pos.direction_to(next_path_pos) * move_speed
+	var direction: Vector2 = current_pos.direction_to(next_path_pos)
+ 
+	velocity = direction * move_speed
 	move_and_slide()
-	
+ 
+	if direction != Vector2.ZERO:
+		facing_direction = _direction_to_string(direction)
+		animated_sprite.play("walk_" + facing_direction)
+
 func get_last_player_position() -> Vector2:
 	return last_player_position
