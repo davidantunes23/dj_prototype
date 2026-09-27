@@ -33,7 +33,7 @@ texture = ExtResource("3_gmlin")
 position = Vector2(10, 0)
 scale = Vector2(0.19166666, 0.2)
 color = Color(0.7121294, 0.7121294, 0.71212935, 1)
+energy = 3.0
 shadow_enabled = true
 texture = ExtResource("4_lvxji")
 offset = Vector2(300, 0)
-
