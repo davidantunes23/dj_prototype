@@ -202,7 +202,7 @@ animations = [{
 radius = 51.0392
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nklks"]
-radius = 590.0415
+radius = 524.03436
 
 [sub_resource type="Animation" id="Animation_mnsx6"]
 length = 0.001
@@ -292,6 +292,9 @@ _data = {
 &"walk_up": SubResource("Animation_hqy5y")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kh0q7"]
+radius = 66.068146
+
 [node name="BichoPapao" type="CharacterBody2D" unique_id=1463987459]
 collision_layer = 4
 collision_mask = 3
@@ -340,6 +343,15 @@ script = ExtResource("5_fryms")
 libraries/ = SubResource("AnimationLibrary_fvhfa")
 
 [node name="DebugLabel" type="Label" parent="." unique_id=1132710934]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
+
+[node name="CatchArea" type="Area2D" parent="." unique_id=1002521099]
+unique_name_in_owner = true
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchArea" unique_id=995778988]
+shape = SubResource("CircleShape2D_kh0q7")

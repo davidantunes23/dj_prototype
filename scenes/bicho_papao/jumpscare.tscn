@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://u5bes3lhf3lp"]
+
+[ext_resource type="Script" uid="uid://b0ocr8wxqqn2h" path="res://scripts/bicho_papao/jumpscare.gd" id="1_takq4"]
+[ext_resource type="Texture2D" uid="uid://bxee6b51gwh46" path="res://assets/bicho_papao/jumpscare.png" id="2_wg3b0"]
+[ext_resource type="AudioStream" uid="uid://cptp67arl7td8" path="res://assets/bicho_papao/jumpscare.mp3" id="3_46017"]
+
+[node name="Jumpscare" type="CanvasLayer" unique_id=1858211321]
+script = ExtResource("1_takq4")
+jumpscare_image = ExtResource("2_wg3b0")
+jumpscare_sound = ExtResource("3_46017")
+
+[node name="JumpscareImage" type="TextureRect" parent="." unique_id=2101642993]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JumpscareAudio" type="AudioStreamPlayer" parent="." unique_id=2066618282]
+unique_name_in_owner = true

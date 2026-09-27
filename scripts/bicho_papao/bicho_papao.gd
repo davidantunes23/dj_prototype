@@ -9,18 +9,22 @@ extends CharacterBody2D
 
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var vision_area: Area2D = $VisionArea
+@onready var catch_area: Area2D = %CatchArea
 @onready var los_ray: RayCast2D = $LineOfSightRay
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var state_machine: Node = $StateMachine
 
 var player: Node2D = null
 var last_player_position: Vector2
 var facing_direction := "down"
+var is_caught: bool = false
 
 func _ready() -> void:
 	call_deferred("_setup_navigation")
 	
 	vision_area.body_entered.connect(_on_vision_area_body_entered)
 	vision_area.body_exited.connect(_on_vision_area_body_exited)
+	catch_area.body_entered.connect(_on_catch_area_body_entered)
 
 func _direction_to_string(dir: Vector2) -> String:
 	# Collapses the input vector into one of the 4 cardinal directions,
@@ -57,6 +61,30 @@ func _on_vision_area_body_entered(body: Node2D) -> void:
 func _on_vision_area_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
+
+func _on_catch_area_body_entered(body: Node2D) -> void:
+	if is_caught or not body.is_in_group("player"):
+		return
+	is_caught = true
+	state_machine.set_physics_process(false)
+	await Jumpscare.trigger()
+	_teleport_to_furthest_waypoint(body.global_position)
+	player = null
+	state_machine.transition_to("Patrol")
+	state_machine.set_physics_process(true)
+	is_caught = false
+
+func _teleport_to_furthest_waypoint(from_position: Vector2) -> void:
+	var furthest_point: Vector2 = global_position
+	var furthest_distance: float = -1.0
+	for np in patrol_points:
+		var point_node = get_node_or_null(np)
+		if point_node is Node2D:
+			var dist = from_position.distance_to(point_node.global_position)
+			if dist > furthest_distance:
+				furthest_distance = dist
+				furthest_point = point_node.global_position
+	global_position = furthest_point
 
 # Shared movement helper
 func move_to(target_position: Vector2) -> void:

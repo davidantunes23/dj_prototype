@@ -37,7 +37,7 @@ func transition_to(target_state_name: String) -> void:
 	var new_state: State = states[key]
 	if current_state:
 		current_state.exit()
-		
+	print(current_state.name, "->", new_state.name)
 	current_state = new_state
 	current_state.enter()
 	_update_debug_label()
