@@ -12,9 +12,7 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * SPEED
 	move_and_slide()
 
-    var mouse_pos = get_global_mouse_position()
-    var target_angle = (mouse_pos - arm_pivot.global_position).angle()
+	var mouse_pos = get_global_mouse_position()
+	var target_angle = (mouse_pos - arm_pivot.global_position).angle()
 
-    arm_pivot.global_rotation = lerp_angle(arm_pibot.global_rotation, target_angle, TURN_SPEED * delta)
-
-
+	arm_pivot.global_rotation = lerp_angle(arm_pivot.global_rotation, target_angle, TURN_SPEED * delta)
