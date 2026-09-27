@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d1r6iwsq05ua5" path="res://icon.svg" id="1_nklks"]
 [ext_resource type="Script" uid="uid://dgok804oxioi6" path="res://scripts/bicho_papao/state_machine.gd" id="3_fryms"]
 [ext_resource type="Script" uid="uid://c2isq8vxiiped" path="res://scripts/bicho_papao/patrol_state.gd" id="4_edc1c"]
+[ext_resource type="Script" uid="uid://c5dxsrhcenr8t" path="res://scripts/bicho_papao/investigate_state.gd" id="5_edc1c"]
 [ext_resource type="Script" uid="uid://4u6ui4tvwtcp" path="res://scripts/bicho_papao/chase_state.gd" id="5_fryms"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytnn"]
@@ -16,7 +17,6 @@ radius = 590.0415
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_j0q6a")
-chase_speed = 220.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=214685243]
 modulate = Color(1, 0, 0, 1)
@@ -45,6 +45,7 @@ initial_state = NodePath("Patrol")
 script = ExtResource("4_edc1c")
 
 [node name="Investigate" type="Node" parent="StateMachine" unique_id=145642655]
+script = ExtResource("5_edc1c")
 
 [node name="Search" type="Node" parent="StateMachine" unique_id=71356285]
 

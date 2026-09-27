@@ -10,6 +10,15 @@ func enter() -> void:
 	_load_waypoints()
 	if waypoints.size() > 0:
 		monster.move_to(waypoints[current_waypoint_index])
+	SoundEvents.player_made_sound.connect(_on_player_made_sound)
+
+func exit() -> void:
+	if SoundEvents.player_made_sound.is_connected(_on_player_made_sound):
+		SoundEvents.player_made_sound.disconnect(_on_player_made_sound)
+
+func _on_player_made_sound(sound_position: Vector2) -> void:
+	monster.last_player_position = sound_position
+	state_machine.transition_to("Investigate")
 
 func _load_waypoints() -> void:
 	waypoints.clear()

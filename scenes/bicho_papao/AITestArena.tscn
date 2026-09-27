@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://hjn7w2f75iht" path="res://scenes/bicho_papao/bicho_papao.tscn" id="2_6q7b0"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_dksfx"]
-vertices = PackedVector2Array(330, 571, 1143.9609, 636.0078, 9.09375, 637.97656, 70, 571, 1142.0313, 10, 1025, 415, 1025, 155, 14.8984375, 10.9921875, 70, 519, 957, 155, 957, 415, 330, 519)
+vertices = PackedVector2Array(350, 591, 1123.8984, 616.0469, 29.28125, 617.9375, 50, 591, 1122.0938, 30.023438, 1045, 435, 1045, 135, 34.71875, 30.96875, 50, 499, 937, 135, 937, 435, 350, 499)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 1, 5, 6), PackedInt32Array(3, 2, 7, 8), PackedInt32Array(7, 4, 6, 9), PackedInt32Array(10, 5, 1, 0, 11), PackedInt32Array(11, 8, 7, 9, 10)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(5, 1, 1152, 0, 1154, 646, -1, 648)])
+agent_radius = 50.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kh0q7"]
 size = Vector2(240, 32)

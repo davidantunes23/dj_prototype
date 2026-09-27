@@ -12,6 +12,7 @@ extends CharacterBody2D
 @onready var los_ray: RayCast2D = $LineOfSightRay
 
 var player: Node2D = null
+var last_player_position: Vector2
 
 func _ready() -> void:
 	call_deferred("_setup_navigation")
@@ -62,3 +63,6 @@ func execute_movement(custom_speed: float = -1.0) -> void:
 	
 	velocity = current_pos.direction_to(next_path_pos) * move_speed
 	move_and_slide()
+	
+func get_last_player_position() -> Vector2:
+	return last_player_position
