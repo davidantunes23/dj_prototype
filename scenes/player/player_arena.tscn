@@ -152,7 +152,7 @@ position = Vector2(129, 216)
 scale = Vector2(0.15, 0.15)
 speed = 65.0
 chase_speed = 75.0
-patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2"), NodePath("../PatrolPath/Point5"), NodePath("../PatrolPath/Point6"), NodePath("../PatrolPath/Point5")])
+patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2")])
 
 [node name="Item" parent="." unique_id=354481293 instance=ExtResource("4_yp8n5")]
 position = Vector2(65, 39.000008)
