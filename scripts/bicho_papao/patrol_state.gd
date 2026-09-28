@@ -6,9 +6,13 @@ extends State
 var current_waypoint_index: int = 0
 var waypoints: Array[Vector2] = []
 
+func set_current_waypoint_index(index: int) -> void:
+	current_waypoint_index = max(index, 0)
+
 func enter() -> void:
 	_load_waypoints()
 	if waypoints.size() > 0:
+		current_waypoint_index = current_waypoint_index % waypoints.size()
 		monster.move_to(waypoints[current_waypoint_index])
 	SoundEvents.player_made_sound.connect(_on_player_made_sound)
 

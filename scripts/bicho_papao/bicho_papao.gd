@@ -68,15 +68,18 @@ func _on_catch_area_body_entered(body: Node2D) -> void:
 	is_caught = true
 	state_machine.set_physics_process(false)
 	await Jumpscare.trigger()
-	_teleport_to_furthest_waypoint(body.global_position)
+	var furthest_waypoint_index = _teleport_to_furthest_waypoint(body.global_position)
+	_sync_patrol_waypoint_index(furthest_waypoint_index)
 	player = null
 	state_machine.transition_to("Patrol")
 	state_machine.set_physics_process(true)
 	is_caught = false
 
-func _teleport_to_furthest_waypoint(from_position: Vector2) -> void:
+func _teleport_to_furthest_waypoint(from_position: Vector2) -> int:
 	var furthest_point: Vector2 = global_position
 	var furthest_distance: float = -1.0
+	var furthest_index: int = -1
+	var idx := 0
 	for np in patrol_points:
 		var point_node = get_node_or_null(np)
 		if point_node is Node2D:
@@ -84,7 +87,19 @@ func _teleport_to_furthest_waypoint(from_position: Vector2) -> void:
 			if dist > furthest_distance:
 				furthest_distance = dist
 				furthest_point = point_node.global_position
+				furthest_index = idx
+		idx += 1
 	global_position = furthest_point
+	return furthest_index
+
+func _sync_patrol_waypoint_index(waypoint_index: int) -> void:
+	if waypoint_index < 0:
+		return
+	if not (state_machine is Node):
+		return
+	var patrol_state = state_machine.states.get("patrol")
+	if patrol_state != null and patrol_state.has_method("set_current_waypoint_index"):
+		patrol_state.set_current_waypoint_index(waypoint_index)
 
 # Shared movement helper
 func move_to(target_position: Vector2) -> void:
