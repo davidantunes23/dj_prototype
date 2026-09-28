@@ -343,6 +343,7 @@ script = ExtResource("5_fryms")
 libraries/ = SubResource("AnimationLibrary_fvhfa")
 
 [node name="DebugLabel" type="Label" parent="." unique_id=1132710934]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true

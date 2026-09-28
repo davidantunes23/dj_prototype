@@ -122,7 +122,6 @@ position = Vector2(40, 38)
 collision_layer = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1798169894]
-visible = false
 color = Color(0.021434655, 0.021434627, 0.021434642, 1)
 
 [node name="PatrolPath" type="Node2D" parent="." unique_id=27032667]
