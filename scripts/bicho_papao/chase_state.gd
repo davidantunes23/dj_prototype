@@ -1,4 +1,5 @@
 extends State
+@onready var laugh_sound: AudioStreamPlayer = $Laugh
 
 func physics_update(_delta: float) -> void:
 	# If player breaks line of sight or leaves vision area
@@ -11,3 +12,6 @@ func physics_update(_delta: float) -> void:
 	# Continuously track player's live positions
 	monster.move_to(monster.player.global_position)
 	monster.execute_movement(monster.chase_speed)
+	
+func enter() -> void:
+	laugh_sound.play()

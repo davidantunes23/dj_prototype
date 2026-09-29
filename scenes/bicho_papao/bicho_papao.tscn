@@ -6,6 +6,10 @@
 [ext_resource type="Script" uid="uid://c2isq8vxiiped" path="res://scripts/bicho_papao/patrol_state.gd" id="4_edc1c"]
 [ext_resource type="Script" uid="uid://c5dxsrhcenr8t" path="res://scripts/bicho_papao/investigate_state.gd" id="5_edc1c"]
 [ext_resource type="Script" uid="uid://4u6ui4tvwtcp" path="res://scripts/bicho_papao/chase_state.gd" id="5_fryms"]
+[ext_resource type="AudioStream" uid="uid://of86ccfae4i7" path="res://assets/bicho_papao/laugh_cut.mp3" id="7_15tff"]
+[ext_resource type="Script" uid="uid://cufc8qk5jj3mr" path="res://scripts/bicho_papao/footsteps.gd" id="7_kwhdo"]
+[ext_resource type="AudioStream" uid="uid://dfkvreystlm76" path="res://assets/player/walking_cut.mp3" id="8_naddt"]
+[ext_resource type="Script" uid="uid://bda1a8f720tam" path="res://scripts/bicho_papao/footsteps_range_debug.gd" id="9_efmt6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kwhdo"]
 atlas = ExtResource("2_edc1c")
@@ -199,10 +203,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytnn"]
-radius = 51.0392
+radius = 10.049875
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nklks"]
-radius = 524.03436
+radius = 85.00588
 
 [sub_resource type="Animation" id="Animation_mnsx6"]
 length = 0.001
@@ -293,7 +297,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh0q7"]
-radius = 66.068146
+radius = 13.0
 
 [node name="BichoPapao" type="CharacterBody2D" unique_id=1463987459]
 collision_layer = 4
@@ -304,10 +308,10 @@ script = ExtResource("1_j0q6a")
 modulate = Color(1, 0, 0, 1)
 texture_filter = 1
 position = Vector2(0, 8)
-scale = Vector2(3, 3)
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_kh0q7")
 animation = &"walk_right"
-offset = Vector2(0, -24)
+offset = Vector2(0, -32)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1382259615]
 shape = SubResource("CircleShape2D_lytnn")
@@ -339,6 +343,9 @@ script = ExtResource("5_edc1c")
 [node name="Chase" type="Node" parent="StateMachine" unique_id=1125186309]
 script = ExtResource("5_fryms")
 
+[node name="Laugh" type="AudioStreamPlayer" parent="StateMachine/Chase" unique_id=1663420698]
+stream = ExtResource("7_15tff")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014662280]
 libraries/ = SubResource("AnimationLibrary_fvhfa")
 
@@ -355,3 +362,12 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatchArea" unique_id=995778988]
 shape = SubResource("CircleShape2D_kh0q7")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=1989484907]
+pitch_scale = 2.0
+script = ExtResource("7_kwhdo")
+footstep_sounds = Array[AudioStream]([ExtResource("8_naddt")])
+
+[node name="FootstepsRangeDebug" type="Node2D" parent="." unique_id=817402399]
+visible = false
+script = ExtResource("9_efmt6")

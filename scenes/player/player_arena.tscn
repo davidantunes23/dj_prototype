@@ -149,7 +149,6 @@ position = Vector2(192, 144)
 
 [node name="BichoPapao" parent="." unique_id=1463987459 instance=ExtResource("3_bagh3")]
 position = Vector2(129, 216)
-scale = Vector2(0.15, 0.15)
 speed = 65.0
 chase_speed = 75.0
 patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2")])

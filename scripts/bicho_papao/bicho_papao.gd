@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var los_ray: RayCast2D = $LineOfSightRay
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var state_machine: Node = $StateMachine
+@onready var footsteps = $Footsteps
 
 var player: Node2D = null
 var last_player_position: Vector2

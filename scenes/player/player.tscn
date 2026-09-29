@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4prhfbwvwpxu" path="res://assets/player/dj_player.png" id="2_lvxji"]
 [ext_resource type="Texture2D" uid="uid://2gfwylpnh5y0" path="res://scenes/player/radial_light.webp" id="3_gmlin"]
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="4_lvxji"]
-[ext_resource type="AudioStream" uid="uid://bqeskv2b4uaee" path="res://assets/player/walking.mp3" id="5_p47bc"]
+[ext_resource type="AudioStream" uid="uid://dfkvreystlm76" path="res://assets/player/walking_cut.mp3" id="5_p47bc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
 atlas = ExtResource("2_lvxji")
@@ -588,6 +588,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=1487937102]
 stream = ExtResource("5_p47bc")
-volume_db = 5.0
-pitch_scale = 2.1
+pitch_scale = 3.0
 autoplay = true
+parameters/looping = true
