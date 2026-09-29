@@ -10,6 +10,7 @@ const PICKUP_COOLDOWN_MS = 1000.0
 @onready var ambient_radius = $AmbientRadius
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var item_holder = $ItemHolder
+@onready var footsteps = $Footsteps
 
 var facing_direction := "down"  # remembers last facing direction for idle
 
@@ -37,6 +38,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("idle_" + facing_direction)
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
+		
+	footsteps.stream_paused = velocity.length() < 1
 
 	var mouse_pos = get_global_mouse_position()
 	var target_angle = (mouse_pos - arm_pivot.global_position).angle()
