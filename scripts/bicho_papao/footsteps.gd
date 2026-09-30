@@ -1,14 +1,5 @@
-extends AudioStreamPlayer
+extends AudioStreamPlayer2D
 class_name MonsterFootsteps
-
-## Attach to an AudioStreamPlayer child of the monster (e.g. "FootstepPlayer").
-## Plays a footstep sound every `step_distance` the monster travels, with
-## volume scaled by current distance to the player — so it gets louder as
-## the monster closes in, even while the player can't see it coming.
-##
-## Deliberately independent of VisionArea's `player` reference (which is
-## null whenever the player is out of line of sight): footstep proximity
-## should work during Patrol/Investigate/Search too, not just Chase.
 
 @export var footstep_sounds: Array[AudioStream] = []
 @export var step_distance: float = 40.0   # distance traveled between footsteps
@@ -28,6 +19,7 @@ func _ready() -> void:
 	_monster = get_parent() as CharacterBody2D
 	_last_position = _monster.global_position
 	_find_player()
+	max_distance = silent_distance * 4.0 # keep Godot's own falloff out of the way
 
 func _physics_process(_delta: float) -> void:
 	if _player == null or not is_instance_valid(_player):

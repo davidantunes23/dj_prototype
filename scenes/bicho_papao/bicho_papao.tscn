@@ -363,7 +363,7 @@ collision_mask = 3
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatchArea" unique_id=995778988]
 shape = SubResource("CircleShape2D_kh0q7")
 
-[node name="Footsteps" type="AudioStreamPlayer" parent="." unique_id=1989484907]
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1543319877]
 pitch_scale = 2.0
 script = ExtResource("7_kwhdo")
 footstep_sounds = Array[AudioStream]([ExtResource("8_naddt")])

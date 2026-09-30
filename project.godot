@@ -15,6 +15,10 @@ run/main_scene="uid://vrwfjh4mreyp"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/2d_panning_strength=1.0
+
 [autoload]
 
 SoundEvents="*uid://xtfti2p1cv6o"
