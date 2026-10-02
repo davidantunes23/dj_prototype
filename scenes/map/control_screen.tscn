@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://duvdk305hun58"]
+
+[ext_resource type="Script" uid="uid://b7tpnoiytiu1m" path="res://scripts/map/control_screen.gd" id="1_l81s2"]
+[ext_resource type="Texture2D" uid="uid://cdwmdh7ym2prd" path="res://assets/controls/controls.png" id="2_ek0xk"]
+
+[node name="ControlScreen" type="Control" unique_id=1026505798]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l81s2")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=334040609]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=445399558]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ek0xk")
+
+[node name="Movement" type="RichTextLabel" parent="." unique_id=34962021]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 499.0
+offset_right = 858.0
+offset_bottom = 599.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Interact" type="RichTextLabel" parent="." unique_id=1313827251]
+layout_mode = 0
+offset_left = 934.0
+offset_top = 499.0
+offset_right = 1166.0
+offset_bottom = 599.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Drop" type="RichTextLabel" parent="." unique_id=577178308]
+layout_mode = 0
+offset_left = 1239.0
+offset_top = 499.0
+offset_right = 1341.0
+offset_bottom = 599.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Drop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Enter" type="RichTextLabel" parent="." unique_id=1745992196]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up.[/b][/pulse][/center]"
+horizontal_alignment = 1
+vertical_alignment = 1
