@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4r3ukj83uxhx"]
 
 [ext_resource type="Script" uid="uid://ctmc4krluny51" path="res://scripts/map/start_screen.gd" id="1_vflkj"]
+[ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/screen/blood_background.png" id="2_sbg6m"]
 
 [node name="StartScreen" type="Control" unique_id=2040006940]
 layout_mode = 3
@@ -19,6 +20,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1845619643]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_sbg6m")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1130737863]
 layout_mode = 1
