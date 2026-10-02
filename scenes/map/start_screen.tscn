@@ -29,30 +29,19 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
-text = "The Nighmare
-After running from the outside world, you found a abandoned mansion and decided to go inside and get yourself some sleep.
-Now, trapped in the dark you notice you are not alone.
-Bicho Papão is hunting you.
-Find the key and escape through the main door.
-Do not let him catch you. With every time he catches, your fear grows and your light shrinks.
+bbcode_enabled = true
+text = "[center][b][font_size=32]THE NIGHTMARE[/font_size][/b][/center]
+
+After fleeing the outside world, you found an abandoned mansion and sought shelter for the night. 
+Now, trapped in the dark, you realize you are not alone. 
+
+[b]Bicho Papão is hunting you.[/b]
+
+Find the key and escape through the main door. 
+Do not let him catch you. With every strike, your fear grows and your light shrinks. 
 If you fall into complete darkness, you sleep forever.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Presse ENTER to wake up."
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to continue...[/b][/pulse][/center]"
 horizontal_alignment = 1
 vertical_alignment = 1
