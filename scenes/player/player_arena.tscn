@@ -107,6 +107,7 @@ sources/0 = SubResource("TileSetAtlasSource_hxsdk")
 [node name="PlayerArena" type="Node2D" unique_id=1503979023]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=307616845]
+position = Vector2(0, 4)
 navigation_polygon = SubResource("NavigationPolygon_bagh3")
 
 [node name="TileMap" type="TileMap" parent="NavigationRegion2D" unique_id=1417392631]

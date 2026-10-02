@@ -66,9 +66,15 @@ func _on_vision_area_body_exited(body: Node2D) -> void:
 func _on_catch_area_body_entered(body: Node2D) -> void:
 	if is_caught or not body.is_in_group("player"):
 		return
+	
 	is_caught = true
 	state_machine.set_physics_process(false)
+	
+	if body.has_method("apply_catch_penalty"):
+		body.apply_catch_penalty()
+	
 	await Jumpscare.trigger()
+	
 	var furthest_waypoint_index = _teleport_to_furthest_waypoint(body.global_position)
 	_sync_patrol_waypoint_index(furthest_waypoint_index)
 	player = null

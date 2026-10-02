@@ -18,15 +18,22 @@ var hand: Item = null
 var pickup_cooldown_time: int
 var pickup_cooldown_item: Item
 
+var catch_count: int = 0
+
 func _init() -> void:
 	pickup_cooldown_time = 0
 	pickup_cooldown_item = null
 
-func _process(delta: float) -> void:
+func _ready() -> void:
+	flashlight_cone.scale = Vector2(0.192, 0.2)
+	
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("drop"):
 		try_drop()
 
 func _physics_process(delta: float) -> void:
+	if catch_count >= 3: return
+	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * SPEED
 	move_and_slide()
@@ -71,3 +78,22 @@ func try_drop() -> void:
 
 	hand.drop(position)
 	hand = null
+	
+func apply_catch_penalty():
+	if catch_count >= 3: return
+	
+	catch_count += 1
+	var tween = create_tween().set_parallel(true)
+	
+	match catch_count:
+		1:
+			tween.tween_property(flashlight_cone, "scale", Vector2(0.1, 0.1), 0.5)
+			# tween.tween_property(ambient_radius, "scale", Vector2(0.8, 0.8), 0.5)
+		2:
+			tween.tween_property(flashlight_cone, "energy", 0.0, 0.5)
+			# tween.tween_property(ambient_radius, "scale", Vector2(0.5, 0.5), 0.5)
+		3:
+			tween.tween_property(ambient_radius, "energy", 0.0, 0.5)
+			
+			await get_tree().create_timer(2.0).timeout
+			get_tree().quit()
