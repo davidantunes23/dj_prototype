@@ -39,16 +39,17 @@ theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[center][b][font_size=32]THE NIGHTMARE[/font_size][/b][/center]
 
-After fleeing the outside world, you found an abandoned mansion and sought shelter for the night. 
-Now, trapped in the dark, you realize you are not alone. 
+You should have gone to sleep when your parents told you to. 
+Now, you have awakened in the pitch black, and your bedroom door is locked from the outside. 
 
-[b]Bicho Papão is hunting you.[/b]
+[b]Bicho Papão has come to claim the children who stay awake.[/b]
 
-Find the key and escape through the main door. 
+Find the keys to escape the nightmare. 
+Use your toys as decoys on the beds to distract him. 
 Do not let him catch you. With every strike, your fear grows and your light shrinks. 
 If you fall into complete darkness, you sleep forever.
 
 
-[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to continue...[/b][/pulse][/center]"
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up...[/b][/pulse][/center]"
 horizontal_alignment = 1
 vertical_alignment = 1
