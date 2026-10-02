@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://drum7os0lxob2"]
+
+[ext_resource type="Script" uid="uid://bqqnfoo7k3ege" path="res://scripts/map/game_over_screen.gd" id="1_1gttd"]
+[ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/screen/blood_background.png" id="1_510vv"]
+
+[node name="GameOverScreen" type="Control" unique_id=1861324531]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1gttd")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=451963635]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=1431995575]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_510vv")
+
+[node name="Game Over" type="RichTextLabel" parent="." unique_id=221875469]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b][font_size=40][color=darkred]YOU SLEEP FOREVER[/color][/font_size][/b][/center]
+
+[center]The light is gone. Bicho Papão has claimed the dark.[/center]
+
+
+
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to try again.[/b][/pulse][/center]"
+horizontal_alignment = 1
+vertical_alignment = 1

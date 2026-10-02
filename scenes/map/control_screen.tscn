@@ -29,6 +29,7 @@ offset_bottom = 40.0
 texture = ExtResource("2_00rwl")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=445399558]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -37,7 +38,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ek0xk")
 
-[node name="Movement" type="RichTextLabel" parent="." unique_id=34962021]
+[node name="Movement" type="RichTextLabel" parent="TextureRect" unique_id=34962021]
 layout_mode = 0
 offset_left = 544.0
 offset_top = 499.0
@@ -49,7 +50,7 @@ text = "Move"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Interact" type="RichTextLabel" parent="." unique_id=1313827251]
+[node name="Interact" type="RichTextLabel" parent="TextureRect" unique_id=1313827251]
 layout_mode = 0
 offset_left = 934.0
 offset_top = 499.0
@@ -61,7 +62,7 @@ text = "Interact"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Drop" type="RichTextLabel" parent="." unique_id=577178308]
+[node name="Drop" type="RichTextLabel" parent="TextureRect" unique_id=577178308]
 layout_mode = 0
 offset_left = 1239.0
 offset_top = 499.0
@@ -73,7 +74,7 @@ text = "Drop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Enter" type="RichTextLabel" parent="." unique_id=1745992196]
+[node name="Enter" type="RichTextLabel" parent="TextureRect" unique_id=1745992196]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,5 +98,27 @@ text = "
 
 
 [center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up.[/b][/pulse][/center]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tuturial" type="RichTextLabel" parent="." unique_id=2117742541]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center]
+[b]W A S D[/b] - Move
+[b]Mouse[/b] - Aim Flashlight
+[b]SPACE[/b] - Place Decoy on Beds
+[b]Q[/b] - Drop Item
+
+
+[pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up.[/b][/pulse]
+[/center]"
 horizontal_alignment = 1
 vertical_alignment = 1

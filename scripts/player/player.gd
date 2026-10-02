@@ -96,4 +96,4 @@ func apply_catch_penalty():
 			tween.tween_property(ambient_radius, "energy", 0.0, 0.5)
 			
 			await get_tree().create_timer(2.0).timeout
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://scenes/map/game_over_screen.tscn")
