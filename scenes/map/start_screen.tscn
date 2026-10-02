@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b4r3ukj83uxhx"]
+
+[ext_resource type="Script" uid="uid://ctmc4krluny51" path="res://scripts/map/start_screen.gd" id="1_vflkj"]
+
+[node name="StartScreen" type="Control" unique_id=2040006940]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vflkj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1060072009]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1130737863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+text = "The Nighmare
+After running from the outside world, you found a abandoned mansion and decided to go inside and get yourself some sleep.
+Now, trapped in the dark you notice you are not alone.
+Bicho Papão is hunting you.
+Find the key and escape through the main door.
+Do not let him catch you. With every time he catches, your fear grows and your light shrinks.
+If you fall into complete darkness, you sleep forever.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Presse ENTER to wake up."
+horizontal_alignment = 1
+vertical_alignment = 1
