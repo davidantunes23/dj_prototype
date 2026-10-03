@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://8c8dn3s81n5t"]
 
 [ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/map/escape_screen.gd" id="1_unmxt"]
+[ext_resource type="Texture2D" uid="uid://dkvtl30abln1g" path="res://assets/screen/escape.png" id="2_oluqd"]
 
 [node name="EscapeScreen" type="Control" unique_id=1468128441]
 layout_mode = 3
@@ -18,12 +19,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.66656864, 0.6665687, 0.66656864, 1)
+color = Color(0.1670075, 0.3684259, 0.21865329, 1)
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=400187887]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oluqd")
 
 [node name="Escape" type="RichTextLabel" parent="." unique_id=198419029]
 layout_mode = 1
