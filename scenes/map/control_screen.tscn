@@ -101,7 +101,7 @@ text = "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tuturial" type="RichTextLabel" parent="." unique_id=2117742541]
+[node name="Tutorial" type="RichTextLabel" parent="." unique_id=2117742541]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,8 +114,8 @@ bbcode_enabled = true
 text = "[center]
 [b]W A S D[/b] - Move
 [b]Mouse[/b] - Aim Flashlight
-[b]SPACE[/b] - Place Decoy on Beds
 [b]Q[/b] - Drop Item
+[b]E[/b] - Interact with Doors/Beds
 
 
 [pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up.[/b][/pulse]
