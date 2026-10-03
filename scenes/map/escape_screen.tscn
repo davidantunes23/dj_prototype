@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://8c8dn3s81n5t"]
+
+[ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/map/escape_screen.gd" id="1_unmxt"]
+
+[node name="EscapeScreen" type="Control" unique_id=1468128441]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_unmxt")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1023418060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.66656864, 0.6665687, 0.66656864, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=400187887]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Escape" type="RichTextLabel" parent="." unique_id=198419029]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+bbcode_enabled = true
+text = "[center][b][font_size=40][color=lightblue]YOU ESCAPED[/color][/font_size][/b][/center]
+
+[center]The door slams shut behind you. The nightmare remains inside.[/center]
+
+
+
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to return to menu.[/b][/pulse][/center]"
+horizontal_alignment = 1
+vertical_alignment = 1
