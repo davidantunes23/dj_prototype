@@ -3,7 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://bi6hfsar6mvle" path="res://tmp/PNGs/Modern House Living Room.png" id="1_b50al"]
 [ext_resource type="PackedScene" uid="uid://che5h633bo7b3" path="res://scenes/player/player.tscn" id="2_hxsdk"]
 [ext_resource type="PackedScene" uid="uid://hjn7w2f75iht" path="res://scenes/bicho_papao/bicho_papao.tscn" id="3_bagh3"]
-[ext_resource type="PackedScene" uid="uid://bsaciuaqw5k2i" path="res://scenes/item/item.tscn" id="4_yp8n5"]
+[ext_resource type="PackedScene" uid="uid://bxwi35ly66xtv" path="res://scenes/item/key.tscn" id="4_yp8n5"]
+[ext_resource type="Script" uid="uid://bojtuy4bheol1" path="res://scripts/map/door.gd" id="5_gh8am"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bagh3"]
 vertices = PackedVector2Array(365.79688, 173.79688, 354.20313, 173.79688, 354.20313, 162.20313, 365.79688, 162.20313, 365.79688, 221.79688, 18.203125, 221.79688, 316.85938, 204.85938, 323.14063, 204.85938, 131.14063, 204.85938, 285.79688, 66.203125, 285.79688, 173.79688, 284.85938, 172.85938, 284.85938, 120.47656, 162.20313, 173.79688, 227.14063, 172.85938, 259.14063, 66.203125, 268.85938, 115.140625, 162.20313, 114.203125, 220.85938, 114.203125, 227.14063, 115.140625, 61.796875, 18.203125, 61.796875, 61.796875, 35.140625, 61.796875, 18.203125, 18.203125, 35.140625, 92.859375, 61.796875, 92.859375, 61.796875, 173.79688, 35.140625, 173.79688, 93.796875, 163.14063, 93.796875, 173.79688, 92.859375, 173.79688, 92.859375, 18.203125, 99.140625, 18.203125, 99.140625, 60.859375, 124.859375, 163.14063, 131.14063, 83.140625, 365.79688, 18.203125, 365.79688, 131.14063, 354.20313, 131.14063, 354.20313, 19.140625, 156.85938, 18.203125, 323.14063, 19.140625, 365.79688, 204.85938, 316.85938, 40.476563, 300.85938, 40.476563, 300.85938, 35.140625, 259.14063, 35.140625, 268.85938, 120.47656, 252.85938, 66.203125, 220.85938, 66.203125, 252.85938, 35.140625, 189.79688, 35.140625, 156.85938, 60.859375, 189.79688, 83.140625, 124.859375, 204.85938, 35.140625, 204.85938, 18.203125, 204.85938, 28.859375, 204.85938, 28.859375, 173.79688, 28.859375, 92.859375, 18.203125, 173.79688, 18.203125, 92.859375, 28.859375, 61.796875, 18.203125, 61.796875)
@@ -104,6 +105,9 @@ occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hxsdk")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb8qb"]
+size = Vector2(13, 42)
+
 [node name="PlayerArena" type="Node2D" unique_id=1503979023]
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=307616845]
@@ -154,7 +158,16 @@ speed = 65.0
 chase_speed = 75.0
 patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2")])
 
-[node name="Item" parent="." unique_id=354481293 instance=ExtResource("4_yp8n5")]
-position = Vector2(65, 39.000008)
-scale = Vector2(0.2, 0.2)
+[node name="Key" parent="." unique_id=1176645331 instance=ExtResource("4_yp8n5")]
+position = Vector2(62, 93)
+collision_layer = 3
 collision_mask = 2
+
+[node name="Door" type="Area2D" parent="." unique_id=387089316]
+position = Vector2(368, 228)
+script = ExtResource("5_gh8am")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=389658012]
+position = Vector2(3.5, -11)
+shape = SubResource("RectangleShape2D_mb8qb")

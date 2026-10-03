@@ -16,6 +16,9 @@ func _on_body_entered(body: Node2D) -> void:
 		if held:
 			call_deferred("attach", body)
 
+func get_type() -> String:
+	return "base"
+
 func attach(player: Player) -> void:
 	reparent(player.get_item_holder(), false)
 	position = Vector2.ZERO

@@ -11,6 +11,7 @@ const PICKUP_COOLDOWN_MS = 1000.0
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var item_holder = $ItemHolder
 @onready var footsteps = $Footsteps
+@onready var interaction_area = $InteractionArea2D
 
 var facing_direction := "down"  # remembers last facing direction for idle
 
@@ -30,6 +31,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("drop"):
 		try_drop()
+	if Input.is_action_just_pressed("interact"):
+		try_interact()
+
+func try_interact() -> void:
+	for area in interaction_area.get_overlapping_areas():
+		if area.has_method("interact"):
+			area.interact(self)
+			break
 
 func _physics_process(delta: float) -> void:
 	if catch_count >= 3: return
@@ -61,6 +70,9 @@ func _direction_to_string(dir: Vector2) -> String:
 
 func get_item_holder() -> Node2D:
 	return $ItemHolder
+
+func get_hand() -> Item:
+	return hand
 
 func try_pickup(item: Item) -> bool:
 	if hand == null and (Time.get_ticks_msec() - pickup_cooldown_time > PICKUP_COOLDOWN_MS or pickup_cooldown_item != item):
