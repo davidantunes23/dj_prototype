@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8c8dn3s81n5t"]
 
 [ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/map/escape_screen.gd" id="1_unmxt"]
-[ext_resource type="Texture2D" uid="uid://dkvtl30abln1g" path="res://assets/screen/escape.png" id="2_oluqd"]
+[ext_resource type="Texture2D" uid="uid://ckvua30wsyx0d" path="res://assets/escape_cr7.png" id="2_pbqkn"]
 [ext_resource type="AudioStream" uid="uid://bbjlh5tjkyd2g" path="res://assets/anthem.mp3" id="3_pbqkn"]
 
 [node name="EscapeScreen" type="Control" unique_id=1468128441]
@@ -29,7 +29,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_oluqd")
+texture = ExtResource("2_pbqkn")
 
 [node name="Escape" type="RichTextLabel" parent="." unique_id=198419029]
 layout_mode = 1
@@ -53,3 +53,4 @@ vertical_alignment = 1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1036313177]
 stream = ExtResource("3_pbqkn")
+volume_db = -40.0
