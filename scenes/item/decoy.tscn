@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bvvpy5vlu237r"]
+
+[ext_resource type="Texture2D" uid="uid://gyb53gt1nbby" path="res://assets/decoy.png" id="1_o72bl"]
+[ext_resource type="Script" uid="uid://djwh2hxmswr3u" path="res://scripts/item/decoy.gd" id="1_ypcys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
+
+[node name="Decoy" type="Area2D" unique_id=1813065219]
+script = ExtResource("1_ypcys")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=173312839]
+scale = Vector2(0.063, 0.063)
+texture = ExtResource("1_o72bl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339722555]
+shape = SubResource("RectangleShape2D_6qbq8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

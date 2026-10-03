@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://hjn7w2f75iht" path="res://scenes/bicho_papao/bicho_papao.tscn" id="3_bagh3"]
 [ext_resource type="PackedScene" uid="uid://bxwi35ly66xtv" path="res://scenes/item/key.tscn" id="4_yp8n5"]
 [ext_resource type="Script" uid="uid://bojtuy4bheol1" path="res://scripts/map/door.gd" id="5_gh8am"]
+[ext_resource type="PackedScene" uid="uid://bvvpy5vlu237r" path="res://scenes/item/decoy.tscn" id="6_fa3wc"]
+[ext_resource type="PackedScene" uid="uid://v8x6ih6okd6k" path="res://scenes/map/bed.tscn" id="7_jwjuh"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bagh3"]
 vertices = PackedVector2Array(365.79688, 173.79688, 354.20313, 173.79688, 354.20313, 162.20313, 365.79688, 162.20313, 365.79688, 221.79688, 18.203125, 221.79688, 316.85938, 204.85938, 323.14063, 204.85938, 131.14063, 204.85938, 285.79688, 66.203125, 285.79688, 173.79688, 284.85938, 172.85938, 284.85938, 120.47656, 162.20313, 173.79688, 227.14063, 172.85938, 259.14063, 66.203125, 268.85938, 115.140625, 162.20313, 114.203125, 220.85938, 114.203125, 227.14063, 115.140625, 61.796875, 18.203125, 61.796875, 61.796875, 35.140625, 61.796875, 18.203125, 18.203125, 35.140625, 92.859375, 61.796875, 92.859375, 61.796875, 173.79688, 35.140625, 173.79688, 93.796875, 163.14063, 93.796875, 173.79688, 92.859375, 173.79688, 92.859375, 18.203125, 99.140625, 18.203125, 99.140625, 60.859375, 124.859375, 163.14063, 131.14063, 83.140625, 365.79688, 18.203125, 365.79688, 131.14063, 354.20313, 131.14063, 354.20313, 19.140625, 156.85938, 18.203125, 323.14063, 19.140625, 365.79688, 204.85938, 316.85938, 40.476563, 300.85938, 40.476563, 300.85938, 35.140625, 259.14063, 35.140625, 268.85938, 120.47656, 252.85938, 66.203125, 220.85938, 66.203125, 252.85938, 35.140625, 189.79688, 35.140625, 156.85938, 60.859375, 189.79688, 83.140625, 124.859375, 204.85938, 35.140625, 204.85938, 18.203125, 204.85938, 28.859375, 204.85938, 28.859375, 173.79688, 28.859375, 92.859375, 18.203125, 173.79688, 18.203125, 92.859375, 28.859375, 61.796875, 18.203125, 61.796875)
@@ -127,6 +129,7 @@ position = Vector2(40, 38)
 collision_layer = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1798169894]
+visible = false
 color = Color(0.021434655, 0.021434627, 0.021434642, 1)
 
 [node name="PatrolPath" type="Node2D" parent="." unique_id=27032667]
@@ -171,3 +174,11 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=389658012]
 position = Vector2(3.5, -11)
 shape = SubResource("RectangleShape2D_mb8qb")
+
+[node name="Decoy" parent="." unique_id=1813065219 instance=ExtResource("6_fa3wc")]
+position = Vector2(16, 95)
+collision_mask = 2
+
+[node name="Bed" parent="." unique_id=1611251540 instance=ExtResource("7_jwjuh")]
+position = Vector2(192, 144)
+collision_layer = 3

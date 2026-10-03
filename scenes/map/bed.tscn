@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://v8x6ih6okd6k"]
+
+[ext_resource type="Texture2D" uid="uid://cyi7t8t5ntf5h" path="res://assets/Modern House with a Horror Twist 2.0/Modern House Bedroom 2.0.png" id="1_6agxc"]
+[ext_resource type="Script" uid="uid://dng11fbiu3dd" path="res://scripts/map/bed.gd" id="1_340o3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qbq8"]
+atlas = ExtResource("1_6agxc")
+region = Rect2(52, 8, 42, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
+size = Vector2(42, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mb8qb"]
+atlas = ExtResource("1_6agxc")
+region = Rect2(100, 8, 42, 48)
+
+[node name="Bed" type="Area2D" unique_id=1611251540]
+script = ExtResource("1_340o3")
+metadata/_edit_group_ = true
+
+[node name="ClosedSprite2D" type="Sprite2D" parent="." unique_id=1904388197]
+visible = false
+texture = SubResource("AtlasTexture_6qbq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
+shape = SubResource("RectangleShape2D_6qbq8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=487249232]
+texture = SubResource("AtlasTexture_mb8qb")
