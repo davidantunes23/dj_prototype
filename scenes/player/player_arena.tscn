@@ -108,7 +108,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hxsdk")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mb8qb"]
-size = Vector2(13, 42)
+size = Vector2(44, 13.5)
 
 [node name="PlayerArena" type="Node2D" unique_id=1503979023]
 
@@ -129,7 +129,6 @@ position = Vector2(40, 38)
 collision_layer = 2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1798169894]
-visible = false
 color = Color(0.021434655, 0.021434627, 0.021434642, 1)
 
 [node name="PatrolPath" type="Node2D" parent="." unique_id=27032667]
@@ -167,13 +166,20 @@ collision_layer = 3
 collision_mask = 2
 
 [node name="Door" type="Area2D" parent="." unique_id=387089316]
-position = Vector2(368, 228)
+position = Vector2(378, 206)
+rotation = 1.5707964
 script = ExtResource("5_gh8am")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=389658012]
-position = Vector2(3.5, -11)
+position = Vector2(11, 7)
 shape = SubResource("RectangleShape2D_mb8qb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Door" unique_id=543026712]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 8
+text = "Door"
 
 [node name="Decoy" parent="." unique_id=1813065219 instance=ExtResource("6_fa3wc")]
 position = Vector2(16, 95)
