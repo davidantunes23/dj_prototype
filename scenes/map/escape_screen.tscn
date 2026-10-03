@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/map/escape_screen.gd" id="1_unmxt"]
 [ext_resource type="Texture2D" uid="uid://dkvtl30abln1g" path="res://assets/screen/escape.png" id="2_oluqd"]
+[ext_resource type="AudioStream" uid="uid://bbjlh5tjkyd2g" path="res://assets/anthem.mp3" id="3_pbqkn"]
 
 [node name="EscapeScreen" type="Control" unique_id=1468128441]
 layout_mode = 3
@@ -49,3 +50,6 @@ text = "[center][b][font_size=40][color=lightblue]YOU ESCAPED[/color][/font_size
 [center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to return to menu.[/b][/pulse][/center]"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1036313177]
+stream = ExtResource("3_pbqkn")
