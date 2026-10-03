@@ -21,6 +21,7 @@ var facing_direction := "down"
 var is_caught: bool = false
 
 func _ready() -> void:
+	add_to_group("monster")
 	call_deferred("_setup_navigation")
 	
 	vision_area.body_entered.connect(_on_vision_area_body_entered)
