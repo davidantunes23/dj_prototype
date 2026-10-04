@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://be8he30x40aq6" path="res://scripts/map/audio_screen.gd" id="1_ks3uo"]
 [ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/screen/blood_background.png" id="2_s0w1t"]
-[ext_resource type="Texture2D" uid="uid://weghclitg378" path="res://assets/headphones.png" id="3_s0w1t"]
+[ext_resource type="Texture2D" uid="uid://ckxt4bdwgry0h" path="res://assets/headphones_silhouette.png" id="3_s0w1t"]
 
 [node name="AudioScreen" type="Control" unique_id=1361843609]
 layout_mode = 3
@@ -36,9 +36,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -192.0
-offset_top = -165.0
+offset_top = -465.0
 offset_right = -160.0
-offset_bottom = -133.0
+offset_bottom = -433.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(12, 12)
