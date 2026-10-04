@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bwnsiti11y1ms"]
+
+[ext_resource type="Script" uid="uid://bojtuy4bheol1" path="res://scripts/map/door.gd" id="1_khyxe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mb8qb"]
+size = Vector2(48, 16)
+
+[node name="Door" type="Area2D" unique_id=321878889]
+script = ExtResource("1_khyxe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=631696658]
+position = Vector2(8.5, 7)
+shape = SubResource("RectangleShape2D_mb8qb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1453242684]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_font_sizes/normal_font_size = 8
+text = "Door"
