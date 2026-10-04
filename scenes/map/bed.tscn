@@ -12,9 +12,10 @@ atlas = ExtResource("1_6agxc")
 region = Rect2(100, 8, 42, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
-size = Vector2(53, 51)
+size = Vector2(58, 56)
 
 [node name="Bed" type="StaticBody2D" unique_id=3958051]
+collision_layer = 3
 metadata/_edit_group_ = true
 
 [node name="ClosedSprite2D" type="Sprite2D" parent="." unique_id=1904388197]
@@ -31,12 +32,9 @@ shape = SubResource("RectangleShape2D_6qbq8")
 texture = SubResource("AtlasTexture_mb8qb")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=204620456]
-collision_mask = 6
+collision_mask = 0
 script = ExtResource("1_340o3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672598202]
-position = Vector2(0.5, 8.5)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_pe5hr")
-
-[node name="DestructionPoint" type="Marker2D" parent="Area2D" unique_id=903548301]
-position = Vector2(0, 33)

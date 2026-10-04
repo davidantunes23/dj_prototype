@@ -16,6 +16,7 @@ extends CharacterBody2D
 @onready var footsteps = $Footsteps
 
 var player: Node2D = null
+var bed: Node2D = null
 var last_player_position: Vector2
 var facing_direction := "down"
 var is_caught: bool = false
@@ -59,13 +60,23 @@ func can_see_player() -> bool:
 func _on_vision_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
+	elif body.is_in_group("bed"):
+		bed = body
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
 	if body == player:
 		player = null
+	elif body == bed:
+		bed = null
 
 func _on_catch_area_body_entered(body: Node2D) -> void:
-	if is_caught or not body.is_in_group("player"):
+	print("catch body entered")
+	if body.is_in_group("bed") && bed != null:
+		print("bed on catch area")
+		body.get_node("Area2D").remove_decoy()
+		state_machine.transition_to("Patrol")
+		return
+	if is_caught or not body.is_in_group("player") or !can_see_player():
 		return
 	
 	is_caught = true
