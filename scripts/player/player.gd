@@ -81,6 +81,7 @@ func get_hand() -> Item:
 func try_pickup(item: Item) -> bool:
 	if hand == null and (Time.get_ticks_msec() - pickup_cooldown_time > PICKUP_COOLDOWN_MS or pickup_cooldown_item != item):
 		hand = item
+		refresh_interact_prompt()
 		return true
 	else:
 		return false
@@ -94,6 +95,7 @@ func try_drop() -> void:
 
 	hand.drop(position)
 	hand = null
+	refresh_interact_prompt()
 	
 func apply_catch_penalty():
 	if catch_count >= 3: return
@@ -113,16 +115,21 @@ func apply_catch_penalty():
 			get_tree().change_scene_to_file("res://scenes/map/game_over_screen.tscn")
 
 func _on_interaction_area_entered(area: Area2D) -> void:
-	if area.has_method("interact"):
-		interaction_prompt.visible = true
+	refresh_interact_prompt()
 
 func _on_interaction_area_exited(area: Area2D) -> void:
-	if area.has_method("interact"):
-		var can_interact = false
-		for overlapping_area in interaction_area.get_overlapping_areas():
-			if overlapping_area.has_method("interact") and overlapping_area != area:
-				can_interact = true
+	refresh_interact_prompt()
+	
+func refresh_interact_prompt() -> void:
+	var valid_target_found = false
+	
+	for area in interaction_area.get_overlapping_areas():
+		if area.has_method("can_interact"):
+			if area.can_interact(self):
+				valid_target_found = true
 				break
 	
-		if not can_interact:
-			interaction_prompt.visible = false
+	if valid_target_found:
+		interaction_prompt.visible = true
+	else:
+		interaction_prompt.visible = false

@@ -10,8 +10,7 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 
 func interact(player: Player) -> void:
-	if used:
-		return
+	if used: return
 
 	var hand = player.get_hand()
 	if hand != null and hand.get_type() == "decoy":
@@ -23,6 +22,12 @@ func interact(player: Player) -> void:
 		player.hand = null
 
 		SoundEvents.emit_sound(global_position)
+		
+func can_interact(player: Player) -> bool:
+	if used: return false
+	
+	var current_hand = player.get_hand()
+	return current_hand != null and current_hand.get_type() == "decoy"
 
 func _on_body_entered(body: Node2D) -> void:
 	if used and body.is_in_group("monster"):
