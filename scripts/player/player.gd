@@ -12,6 +12,7 @@ const PICKUP_COOLDOWN_MS = 1000.0
 @onready var item_holder = $ItemHolder
 @onready var footsteps = $Footsteps
 @onready var interaction_area = $InteractionArea2D
+@onready var interaction_prompt = $InteractionPrompt
 
 var facing_direction := "down"  # remembers last facing direction for idle
 
@@ -27,6 +28,9 @@ func _init() -> void:
 
 func _ready() -> void:
 	flashlight_cone.scale = Vector2(0.192, 0.2)
+	
+	interaction_area.area_entered.connect(_on_interaction_area_entered)
+	interaction_area.area_exited.connect(_on_interaction_area_exited)
 	
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("drop"):
@@ -100,12 +104,25 @@ func apply_catch_penalty():
 	match catch_count:
 		1:
 			tween.tween_property(flashlight_cone, "scale", Vector2(0.1, 0.1), 0.5)
-			# tween.tween_property(ambient_radius, "scale", Vector2(0.8, 0.8), 0.5)
 		2:
 			tween.tween_property(flashlight_cone, "energy", 0.0, 0.5)
-			# tween.tween_property(ambient_radius, "scale", Vector2(0.5, 0.5), 0.5)
 		3:
 			tween.tween_property(ambient_radius, "energy", 0.0, 0.5)
 			
 			await get_tree().create_timer(2.0).timeout
 			get_tree().change_scene_to_file("res://scenes/map/game_over_screen.tscn")
+
+func _on_interaction_area_entered(area: Area2D) -> void:
+	if area.has_method("interact"):
+		interaction_prompt.visible = true
+
+func _on_interaction_area_exited(area: Area2D) -> void:
+	if area.has_method("interact"):
+		var can_interact = false
+		for overlapping_area in interaction_area.get_overlapping_areas():
+			if overlapping_area.has_method("interact") and overlapping_area != area:
+				can_interact = true
+				break
+	
+		if not can_interact:
+			interaction_prompt.visible = false
