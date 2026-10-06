@@ -203,7 +203,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lytnn"]
-radius = 6.0
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nklks"]
 radius = 85.00588
@@ -297,7 +297,7 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh0q7"]
-radius = 23.0
+radius = 21.0
 
 [node name="BichoPapao" type="CharacterBody2D" unique_id=1463987459]
 collision_layer = 4
@@ -317,6 +317,8 @@ offset = Vector2(0, -32)
 shape = SubResource("CircleShape2D_lytnn")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=1868315761]
+path_desired_distance = 8.0
+target_desired_distance = 8.0
 simplify_path = true
 
 [node name="VisionArea" type="Area2D" parent="." unique_id=1630113369]

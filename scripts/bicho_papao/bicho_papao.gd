@@ -84,9 +84,9 @@ func _on_catch_area_body_entered(body: Node2D) -> void:
 	
 	if body.has_method("apply_catch_penalty"):
 		body.apply_catch_penalty()
-	
+	print("here")
 	await Jumpscare.trigger()
-	
+	print("awop")
 	var furthest_waypoint_index = _teleport_to_furthest_waypoint(body.global_position)
 	_sync_patrol_waypoint_index(furthest_waypoint_index)
 	player = null
