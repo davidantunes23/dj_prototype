@@ -1,6 +1,6 @@
 extends State
 
-@export var arrival_radius: float = 15.0
+@export var arrival_radius: float = 8
 
 func enter() -> void:
 	SoundEvents.player_made_sound.connect(_on_player_made_sound)

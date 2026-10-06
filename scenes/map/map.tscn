@@ -7058,7 +7058,7 @@ tile_map_data = PackedByteArray("AAD+//7/AAAEAAYAAAD+//3/AAAEAAYAAAD+//z/AAAEAAY
 tile_set = SubResource("TileSet_cwo4b")
 
 [node name="BichoPapao" parent="NavigationRegion2D" unique_id=1463987459 instance=ExtResource("12_rqo2c")]
-position = Vector2(-442, -294)
+position = Vector2(-321, -345)
 speed = 65.0
 chase_speed = 75.0
 patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point"), NodePath("../PatrolPath/Point2")])
