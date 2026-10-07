@@ -35,10 +35,13 @@ shape = SubResource("RectangleShape2D_eum1v")
 debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 
 [node name="NoiseTimer" type="Timer" parent="." unique_id=1296862358]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1039332799]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1481527301]
 shape = SubResource("RectangleShape2D_uwtoc")
+
+[node name="Marker2d" type="Marker2D" parent="." unique_id=132099405]
+position = Vector2(0, 17)
