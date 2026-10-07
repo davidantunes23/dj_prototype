@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4r3ukj83uxhx"]
 
-[ext_resource type="Script" uid="uid://ctmc4krluny51" path="res://scripts/map/start_screen.gd" id="1_vflkj"]
+[ext_resource type="Script" uid="uid://ctmc4krluny51" path="res://scripts/screens/start_screen.gd" id="1_vflkj"]
 [ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/UI/blood_background.png" id="2_sbg6m"]
 
 [node name="StartScreen" type="Control" unique_id=2040006940]
