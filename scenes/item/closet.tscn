@@ -1,36 +1,205 @@
 [gd_scene format=3 uid="uid://k7cch2k5m1mk"]
 
 [ext_resource type="Script" uid="uid://glk31kfda68a" path="res://scripts/item/closet.gd" id="1_oifui"]
-[ext_resource type="Texture2D" uid="uid://cyi7t8t5ntf5h" path="res://assets/Modern House with a Horror Twist 2.0/Modern House Bedroom 2.0.png" id="2_u6chq"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4r3ns"]
-load_path = "res://.godot/imported/Modern House Bedroom 2.0.png-cf333593469c5d756ad58d3b6082eb19.ctex"
+[ext_resource type="Texture2D" uid="uid://wt1wf566v6qk" path="res://assets/closet/closet.png" id="2_4r3ns"]
+[ext_resource type="AudioStream" uid="uid://gjmf7ie6g7m8" path="res://assets/closet/open_closet.wav" id="3_u6chq"]
+[ext_resource type="AudioStream" uid="uid://n7ltn5nv2txy" path="res://assets/closet/break_closet.wav" id="4_4r3ns"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eum1v"]
-size = Vector2(32, 8)
+size = Vector2(33, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtoc"]
-size = Vector2(32, 30)
+size = Vector2(33, 30)
+
+[sub_resource type="Animation" id="Animation_18k5n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OpenSound:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BreakSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4r3ns"]
+resource_name = "break"
+length = 1.26
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BreakSound:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_hide_monster"
+}, {
+"args": [],
+"method": &"_show_monster"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xvdhj"]
+resource_name = "exit"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_show_player"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OpenSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2kqqm"]
+resource_name = "open"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_hide_player"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("OpenSound:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18k5n"]
+_data = {
+&"RESET": SubResource("Animation_18k5n"),
+&"break": SubResource("Animation_4r3ns"),
+&"exit": SubResource("Animation_xvdhj"),
+&"open": SubResource("Animation_2kqqm")
+}
 
 [node name="Closet" type="Area2D" unique_id=2050555960]
 script = ExtResource("1_oifui")
 
-[node name="SpriteNormal" type="Sprite2D" parent="." unique_id=934515720]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=461969848]
+position = Vector2(0, 9.999999)
 scale = Vector2(0.7, 0.7)
-texture = SubResource("CompressedTexture2D_4r3ns")
+texture = ExtResource("2_4r3ns")
+hframes = 4
 region_enabled = true
-region_rect = Rect2(0.9234066, 99.05658, 46.15435, 43.096054)
-
-[node name="SpriteBroken" type="Sprite2D" parent="." unique_id=1879616321]
-visible = false
-position = Vector2(0, 10)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("2_u6chq")
-region_enabled = true
-region_rect = Rect2(144.68909, 98.75235, 46.80739, 71.48157)
+region_rect = Rect2(96.73635, 59.669876, 190.71213, 71.49797)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247712530]
-position = Vector2(0, 14)
+position = Vector2(-0.5, 14)
 shape = SubResource("RectangleShape2D_eum1v")
 debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 
@@ -41,7 +210,17 @@ one_shot = true
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1039332799]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1481527301]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_uwtoc")
 
 [node name="Marker2d" type="Marker2D" parent="." unique_id=132099405]
 position = Vector2(0, 17)
+
+[node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=675614549]
+stream = ExtResource("3_u6chq")
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="." unique_id=541078647]
+stream = ExtResource("4_4r3ns")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1693729396]
+libraries/ = SubResource("AnimationLibrary_18k5n")

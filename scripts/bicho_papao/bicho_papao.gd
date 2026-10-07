@@ -91,13 +91,17 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 		if current_behavior == "investigate" or current_behavior == "chase":
 			var was_player_inside = area.player_inside
 			var trapped_player = area.hidden_player
-				
+			
+			state_machine.set_physics_process(false)
+			
+			if area.has_method("break_closet"):
+				area.break_closet()
+			
 			if was_player_inside and trapped_player != null:
 				_catch_player(trapped_player)
-				if area.has_method("break_closet"):
-					area.break_closet()
 			else:
 				state_machine.transition_to("Patrol")
+				state_machine.set_physics_process(true)
 	
 func _catch_player(body: Player) -> void:
 	is_caught = true
