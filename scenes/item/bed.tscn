@@ -6,10 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://dcb3kl7lkroqm" path="res://assets/bed/sheets.wav" id="4_3gpjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
-size = Vector2(35, 39)
+size = Vector2(45, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
-size = Vector2(58, 56)
+size = Vector2(33, 38)
 
 [sub_resource type="Animation" id="Animation_58eht"]
 length = 0.001
@@ -132,6 +132,7 @@ _data = {
 
 [node name="Bed" type="Area2D" unique_id=2057781252]
 collision_layer = 3
+script = ExtResource("1_340o3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817473610]
 scale = Vector2(0.6, 0.6)
@@ -141,15 +142,15 @@ region_enabled = true
 region_rect = Rect2(-0.012791634, -0.013542175, 312.1488, 64.00213)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
-position = Vector2(-0.5, 1.5)
+position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_6qbq8")
+debug_color = Color(0.866483, 0.35554737, 0, 0.41960785)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=204620456]
+[node name="StatickBody2D" type="StaticBody2D" parent="." unique_id=1557247841]
 collision_mask = 0
-script = ExtResource("1_340o3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672598202]
-position = Vector2(0, 6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StatickBody2D" unique_id=1672598202]
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_pe5hr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908184342]

@@ -1,7 +1,7 @@
 extends Area2D
 
-@onready var sprite = $"../Sprite2D"
-@onready var animation = $"../AnimationPlayer"
+@onready var sprite = $Sprite2D
+@onready var animation = $AnimationPlayer
 
 var is_destroyed := false
 var has_decoy := false
