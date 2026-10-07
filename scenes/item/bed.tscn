@@ -9,7 +9,7 @@
 size = Vector2(45, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
-size = Vector2(33, 38)
+size = Vector2(37, 43)
 
 [sub_resource type="Animation" id="Animation_58eht"]
 length = 0.001
@@ -135,14 +135,14 @@ collision_layer = 3
 script = ExtResource("1_340o3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817473610]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_3gpjn")
 hframes = 5
 region_enabled = true
 region_rect = Rect2(-0.012791634, -0.013542175, 312.1488, 64.00213)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
-position = Vector2(-0.5, 4)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_6qbq8")
 debug_color = Color(0.866483, 0.35554737, 0, 0.41960785)
 
@@ -150,7 +150,7 @@ debug_color = Color(0.866483, 0.35554737, 0, 0.41960785)
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StatickBody2D" unique_id=1672598202]
-position = Vector2(-0.5, 0)
+position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_pe5hr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908184342]
@@ -162,3 +162,9 @@ stream = ExtResource("3_dylhp")
 [node name="Sheets" type="AudioStreamPlayer2D" parent="." unique_id=1720756418]
 stream = ExtResource("4_3gpjn")
 volume_db = -15.0
+
+[node name="MarkerLeft" type="Marker2D" parent="." unique_id=1296750897]
+position = Vector2(-21, 0)
+
+[node name="MarkerRight" type="Marker2D" parent="." unique_id=1210345551]
+position = Vector2(21, 0)

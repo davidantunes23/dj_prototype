@@ -27,6 +27,9 @@ func interact(player: Player) -> void:
 		player_inside = true
 		hidden_player = player
 		animation.play("open")
+		
+		noise_timer.stop()
+		noise_timer.start()
 	else:
 		animation.play("exit")
 

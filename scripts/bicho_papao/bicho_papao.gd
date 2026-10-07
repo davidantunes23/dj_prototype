@@ -78,17 +78,19 @@ func _on_catch_area_body_entered(body: Node2D) -> void:
 	_catch_player(body)
 	
 func _on_catch_area_area_entered(area: Area2D) -> void:
+	var current_behavior = state_machine.current_state.name.to_lower()
+	
 	if area.is_in_group("closet"):
-		var current_behavior = state_machine.current_state.name.to_lower()
+		var is_target = area.global_position.distance_to(last_player_position) < 25
 		
-		if current_behavior == "investigate" or current_behavior == "chase":
+		if area.player_inside or (current_behavior == "investigate" and is_target):
+			print("closet")
 			var was_player_inside = area.player_inside
 			var trapped_player = area.hidden_player
 			
 			state_machine.set_physics_process(false)
-			
 			if area.has_method("break_closet"):
-				area.break_closet()
+				await area.break_closet()
 			
 			if was_player_inside and trapped_player != null:
 				_catch_player(trapped_player)
@@ -97,19 +99,20 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 				state_machine.set_physics_process(true)
 				
 	elif area.is_in_group("bed"):
-		var current_behavior = state_machine.current_state.name.to_lower()
+		var is_target = area.global_position.distance_to(last_player_position) < 25
 		
-		if current_behavior == "investigate" or current_behavior == "chase":
+		if current_behavior == "investigate" and is_target:
+			print("bed")
 			if area.has_decoy and not area.is_destroyed:
-				state_machine.set_physics_process(false)
 				
+				state_machine.set_physics_process(false)
 				if area.has_method("break_bed"):
 					await area.break_bed()
 					
 				state_machine.transition_to("Patrol")
 				state_machine.set_physics_process(true)
-		
-	
+
+
 func _catch_player(body: Player) -> void:
 	is_caught = true
 	state_machine.set_physics_process(false)
