@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 70
+const SPEED = 67
 const TURN_SPEED = 5.0
 const PICKUP_COOLDOWN_MS = 1000.0
 

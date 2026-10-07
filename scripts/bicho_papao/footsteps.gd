@@ -5,9 +5,9 @@ class_name MonsterFootsteps
 @export var step_distance: float = 40.0   # distance traveled between footsteps
 
 @export_group("Volume falloff")
-@export var loud_distance: float = 100     # at/below this distance -> full volume
-@export var silent_distance: float = 250  # at/beyond this distance -> silent
-@export var volume_db_near: float = 4.0
+@export var loud_distance: float = 75     # at/below this distance -> full volume
+@export var silent_distance: float = 400  # at/beyond this distance -> silent
+@export var volume_db_near: float = 15
 @export var volume_db_far: float = -40.0
 
 var _monster: CharacterBody2D

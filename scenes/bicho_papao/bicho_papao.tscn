@@ -348,6 +348,7 @@ script = ExtResource("5_fryms")
 
 [node name="Laugh" type="AudioStreamPlayer" parent="StateMachine/Chase" unique_id=1663420698]
 stream = ExtResource("7_15tff")
+pitch_scale = 0.71
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2014662280]
 libraries/ = SubResource("AnimationLibrary_fvhfa")
