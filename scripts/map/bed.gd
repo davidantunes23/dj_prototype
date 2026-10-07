@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var sprite_closed = $"../ClosedSprite2D"
 @onready var sprite_open = $"../Sprite2D2"
+@onready var sprite_decoy = $"../DecoySprite"
 
 var used = false
 
@@ -17,6 +18,7 @@ func interact(player: Player) -> void:
 		used = true
 		sprite_open.visible = false
 		sprite_closed.visible = true
+		sprite_decoy.visible = true
 
 		player.hand.queue_free()
 		player.hand = null
@@ -32,9 +34,11 @@ func can_interact(player: Player) -> bool:
 func _on_body_entered(body: Node2D) -> void:
 	if used and body.is_in_group("monster"):
 		sprite_closed.visible = false
+		sprite_decoy.visible = false
 		sprite_open.visible = true
 		
 func remove_decoy() -> void:
 	if used:
 		sprite_closed.visible = false
+		sprite_decoy.visible = false
 		sprite_open.visible = true

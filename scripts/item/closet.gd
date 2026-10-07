@@ -4,6 +4,12 @@ extends Area2D
 @onready var sprite_normal = $SpriteNormal
 @onready var sprite_broken = $SpriteBroken
 @onready var noise_timer = $NoiseTimer
+@onready var noise_market = $Marker2d
+
+@onready var open_sound = $OpenSound
+@onready var break_sound = $BreakSound
+
+@onready var animation = $AnimationPlayer
 
 var is_destroyed := false
 var player_inside := false
@@ -11,39 +17,67 @@ var hidden_player: Player = null
 
 func _ready() -> void:
 	add_to_group("closet")
-	body_entered.connect(_on_body_entered)
 	noise_timer.timeout.connect(_on_noise_timer_timeout)
 
 func can_interact(player: Player) -> bool:
-	if is_destroyed: return false
+	if is_destroyed or animation.is_playing(): return false
 	return !player_inside or hidden_player == player
 
 func interact(player: Player) -> void:
-	if is_destroyed: return
+	if is_destroyed or animation.is_playing(): return
 	
 	if !player_inside:
 		player_inside = true
 		hidden_player = player
-		player.set_hidden_state(true)
-		noise_timer.start()
-	else:
-		player_inside = false
-		player.set_hidden_state(false)
-		hidden_player = null
-		noise_timer.stop()
+		animation.play("open")
 		
+		open_sound.play()
+		_rattle_closet()
+	else:
+		animation.play("exit")
+		open_sound.play()
+		_rattle_closet()
+
 func _on_noise_timer_timeout() -> void:
-	SoundEvents.emit_sound(global_position)
+	# TODO: Put closet noise here
+	SoundEvents.emit_sound(noise_market.global_position)
+
+func _hide_player():
+	if hidden_player:
+		hidden_player.set_hidden_state(true)
+	noise_timer.start()
 	
-func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("monster") and player_inside and not is_destroyed:
-		is_destroyed = true
-		sprite_normal.visible = false
-		sprite_broken.visible = true
-		noise_timer.stop()
-	
+func _show_player():
 	if hidden_player:
 		hidden_player.set_hidden_state(false)
-		hidden_player.apply_catch_penalty()
-		hidden_player = null
- 
+	player_inside = false
+	hidden_player = null
+	noise_timer.stop()
+	
+func _hide_monster():
+	pass
+	
+func _show_monster():
+	pass
+
+
+func break_closet() -> void:
+	if is_destroyed: return
+	
+	is_destroyed = true
+	noise_timer.stop()
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+	animation.play("break")
+	
+	await animation.animation_finished
+	
+	if player_inside and hidden_player != null:
+		hidden_player.set_hidden_state(false)
+		
+func _rattle_closet() -> void:
+	var tween = create_tween()
+	
+	tween.tween_property(sprite_normal, "scale", Vector2(1.05, 0.7), 0.1)
+	tween.tween_property(sprite_normal, "scale", Vector2(0.7, 1.05), 0.1)
+	tween.tween_property(sprite_normal, "scale", Vector2(0.7, 0.7), 0.1)

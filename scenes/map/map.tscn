@@ -5686,7 +5686,7 @@ texture = ExtResource("3_cumk7")
 
 [sub_resource type="TileSet" id="TileSet_cde6h"]
 occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 8
+physics_layer_0/collision_layer = 16
 sources/0 = SubResource("TileSetAtlasSource_3xi6f")
 sources/1 = SubResource("TileSetAtlasSource_xks3a")
 sources/2 = SubResource("TileSetAtlasSource_2kc6l")
@@ -7086,8 +7086,7 @@ patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point1"), NodePath("../
 [node name="Player" parent="NavigationRegion2D" unique_id=800565437 groups=["player"] instance=ExtResource("13_cumk7")]
 position = Vector2(104, -72)
 scale = Vector2(1.2, 1.2)
-collision_layer = 3
-collision_mask = 11
+collision_layer = 2
 
 [node name="Objects" type="Node2D" parent="NavigationRegion2D" unique_id=1641954606]
 y_sort_enabled = true
@@ -7170,6 +7169,7 @@ shape = SubResource("RectangleShape2D_cwo4b")
 
 [node name="Bed2" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=763816194]
 position = Vector2(56, -560)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed2" unique_id=1460454123]
@@ -7185,6 +7185,7 @@ shape = SubResource("RectangleShape2D_cwo4b")
 
 [node name="Bed3" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=572179245]
 position = Vector2(-752, -648)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed3" unique_id=845573117]
@@ -7268,6 +7269,7 @@ region_rect = Rect2(240, 144, 48, 64)
 
 [node name="Table" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=121662281]
 position = Vector2(104, -232)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Table" unique_id=1230784696]
@@ -7298,6 +7300,7 @@ shape = SubResource("RectangleShape2D_ly181")
 
 [node name="BedsideTable" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=228433974]
 position = Vector2(107, -94)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/BedsideTable" unique_id=506337228]
@@ -7311,6 +7314,7 @@ shape = SubResource("RectangleShape2D_kh0q7")
 
 [node name="BedsideTable2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=440080239]
 position = Vector2(-621, -285)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/BedsideTable2" unique_id=1249336899]
@@ -7324,6 +7328,7 @@ shape = SubResource("RectangleShape2D_kh0q7")
 
 [node name="Sofa" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1754182311]
 position = Vector2(96, -176)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Sofa" unique_id=876268958]
@@ -7339,6 +7344,7 @@ shape = SubResource("RectangleShape2D_pe5hr")
 
 [node name="Sofa2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=444211767]
 position = Vector2(160, -224)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Sofa2" unique_id=525460409]
@@ -7465,6 +7471,7 @@ shape = SubResource("RectangleShape2D_xr5ep")
 
 [node name="Plant" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=937820069]
 position = Vector2(48, -272)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant" unique_id=1275730427]
@@ -7478,6 +7485,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Plant4" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=949210597]
 position = Vector2(-453, -237)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant4" unique_id=1888802026]
@@ -7491,6 +7499,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Plant2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=2114449456]
 position = Vector2(-117, -269)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant2" unique_id=2091727273]
@@ -7517,6 +7526,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Lamp" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1741443969]
 position = Vector2(152, -264)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Lamp" unique_id=320057259]
@@ -7531,6 +7541,7 @@ shape = SubResource("RectangleShape2D_ooxkd")
 
 [node name="Bathtub" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=803340822]
 position = Vector2(-200, -353)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Bathtub" unique_id=1498335860]
@@ -7544,6 +7555,7 @@ shape = SubResource("RectangleShape2D_ldcxq")
 
 [node name="Sink" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=603471478]
 position = Vector2(-168, -272)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Sink" unique_id=2056684062]
@@ -7558,6 +7570,7 @@ shape = SubResource("RectangleShape2D_rts6w")
 
 [node name="Toilet" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1196809372]
 position = Vector2(-172, -312)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Toilet" unique_id=537319188]
@@ -7572,6 +7585,7 @@ shape = SubResource("RectangleShape2D_5vjvf")
 
 [node name="Basket" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=270929701]
 position = Vector2(-232, -240)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Basket" unique_id=945965753]
@@ -7600,6 +7614,7 @@ shape = SubResource("RectangleShape2D_ukif2")
 
 [node name="KitchenTable" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=664685304]
 position = Vector2(-384, -304)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/KitchenTable" unique_id=1557990882]
@@ -7629,6 +7644,7 @@ shape = SubResource("RectangleShape2D_l3y01")
 
 [node name="Chair" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=454729190]
 position = Vector2(-400, -320)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Chair" unique_id=813830135]
@@ -7643,6 +7659,7 @@ shape = SubResource("RectangleShape2D_71qfy")
 
 [node name="Chair2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=74617747]
 position = Vector2(-384, -328)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Chair2" unique_id=1922832491]
@@ -7657,6 +7674,7 @@ shape = SubResource("RectangleShape2D_71qfy")
 
 [node name="Chair3" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1228361369]
 position = Vector2(-360, -320)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Chair3" unique_id=1035903211]
@@ -7671,6 +7689,7 @@ shape = SubResource("RectangleShape2D_71qfy")
 
 [node name="Chair4" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1622026188]
 position = Vector2(-344, -312)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Chair4" unique_id=511699830]
@@ -7685,6 +7704,7 @@ shape = SubResource("RectangleShape2D_71qfy")
 
 [node name="Chair5" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1912586052]
 position = Vector2(-416, -312)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Chair5" unique_id=362683902]
@@ -7800,6 +7820,7 @@ region_rect = Rect2(32, 16, 16, 16)
 
 [node name="Shower" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=125409132]
 position = Vector2(-845, -453)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Shower" unique_id=1331712452]
@@ -7825,6 +7846,7 @@ region_rect = Rect2(96, 0, 32, 48)
 
 [node name="Bathtub2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=747380147]
 position = Vector2(-832, -416)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Bathtub2" unique_id=1175958797]
@@ -7981,6 +8003,7 @@ region_rect = Rect2(240, 144, 48, 64)
 
 [node name="Lamp4" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=881857531]
 position = Vector2(-704, -696)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Lamp4" unique_id=1834819108]
@@ -7994,6 +8017,7 @@ shape = SubResource("RectangleShape2D_e07uo")
 
 [node name="TV2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1442922765]
 position = Vector2(-328, -648)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/TV2" unique_id=370665731]
@@ -8028,6 +8052,7 @@ region_rect = Rect2(96, 0, 32, 48)
 
 [node name="Plant9" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=360541799]
 position = Vector2(-416, -608)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant9" unique_id=439279349]
@@ -8041,6 +8066,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Plant10" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1605614700]
 position = Vector2(-616, -608)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant10" unique_id=1264007800]
@@ -8113,6 +8139,7 @@ shape = SubResource("RectangleShape2D_58ndj")
 
 [node name="Table3" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=726233211]
 position = Vector2(-168, -664)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Table3" unique_id=1229052249]
@@ -8127,6 +8154,7 @@ shape = SubResource("RectangleShape2D_58ndj")
 
 [node name="Table4" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=627350430]
 position = Vector2(-256, -584)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Table4" unique_id=1368567490]
@@ -8266,6 +8294,7 @@ region_rect = Rect2(0, 32, 16, 16)
 
 [node name="Plant5" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=2079112013]
 position = Vector2(-832, -728)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant5" unique_id=1337812415]
@@ -8279,6 +8308,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Sofa3" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=889930122]
 position = Vector2(-792, -728)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Sofa3" unique_id=337427817]
@@ -8294,6 +8324,7 @@ shape = SubResource("RectangleShape2D_pe5hr")
 
 [node name="Plant8" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1572214311]
 position = Vector2(-680, -648)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant8" unique_id=641510001]
@@ -8318,6 +8349,7 @@ region_rect = Rect2(240, 96, 48, 48)
 
 [node name="Plant6" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=411179085]
 position = Vector2(-832, -632)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant6" unique_id=1786773971]
@@ -8331,6 +8363,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Plant7" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1141695041]
 position = Vector2(-720, -584)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Plant7" unique_id=316295011]
@@ -8344,6 +8377,7 @@ shape = SubResource("RectangleShape2D_ovklt")
 
 [node name="Lamp3" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1738688205]
 position = Vector2(-816, -584)
+collision_layer = 8
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Lamp3" unique_id=1698442992]

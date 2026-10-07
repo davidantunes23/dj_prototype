@@ -177,3 +177,6 @@ collision_mask = 2
 
 [node name="Closet" parent="." unique_id=2050555960 instance=ExtResource("8_eum1v")]
 position = Vector2(224, 73)
+
+[node name="Closet2" parent="." unique_id=641488108 instance=ExtResource("8_eum1v")]
+position = Vector2(22, 130)

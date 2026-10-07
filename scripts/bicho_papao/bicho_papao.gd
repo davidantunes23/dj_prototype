@@ -28,6 +28,8 @@ func _ready() -> void:
 	vision_area.body_entered.connect(_on_vision_area_body_entered)
 	vision_area.body_exited.connect(_on_vision_area_body_exited)
 	catch_area.body_entered.connect(_on_catch_area_body_entered)
+	
+	catch_area.area_entered.connect(_on_catch_area_area_entered)
 
 func _direction_to_string(dir: Vector2) -> String:
 	# Collapses the input vector into one of the 4 cardinal directions,
@@ -76,17 +78,42 @@ func _on_catch_area_body_entered(body: Node2D) -> void:
 		body.get_node("Area2D").remove_decoy()
 		state_machine.transition_to("Patrol")
 		return
+	
 	if is_caught or not body.is_in_group("player") or !can_see_player():
 		return
+		
+	_catch_player(body)
 	
+func _on_catch_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("closet"):
+		var current_behavior = state_machine.current_state.name.to_lower()
+		
+		if current_behavior == "investigate" or current_behavior == "chase":
+			var was_player_inside = area.player_inside
+			var trapped_player = area.hidden_player
+			
+			state_machine.set_physics_process(false)
+			
+			if area.has_method("break_closet"):
+				area.break_closet()
+			
+			if was_player_inside and trapped_player != null:
+				_catch_player(trapped_player)
+			else:
+				state_machine.transition_to("Patrol")
+				state_machine.set_physics_process(true)
+	
+func _catch_player(body: Player) -> void:
 	is_caught = true
 	state_machine.set_physics_process(false)
 	
 	if body.has_method("apply_catch_penalty"):
 		body.apply_catch_penalty()
+
 	print("here")
 	await Jumpscare.trigger()
 	print("awop")
+
 	var furthest_waypoint_index = _teleport_to_furthest_waypoint(body.global_position)
 	_sync_patrol_waypoint_index(furthest_waypoint_index)
 	player = null
