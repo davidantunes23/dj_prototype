@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://8c8dn3s81n5t"]
 
-[ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/screens/escape_screen.gd" id="1_unmxt"]
+[ext_resource type="Script" uid="uid://bf5i3rwweqfpx" path="res://scripts/map/escape_screen.gd" id="1_unmxt"]
 [ext_resource type="Texture2D" uid="uid://dkvtl30abln1g" path="res://assets/UI/escape.png" id="2_oluqd"]
 
 [node name="EscapeScreen" type="Control" unique_id=1468128441]
