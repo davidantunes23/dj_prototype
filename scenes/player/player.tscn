@@ -548,6 +548,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_6qbq8"]
 
 [node name="Player" type="CharacterBody2D" unique_id=800565437]
+collision_layer = 3
+collision_mask = 27
 script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=623797097]
@@ -561,6 +563,7 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_0owmy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=685623581]
+zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="AmbientRadius" type="PointLight2D" parent="." unique_id=1085767775]

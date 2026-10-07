@@ -33,7 +33,7 @@ shape = SubResource("RectangleShape2D_cwo4b")
 occluder = SubResource("OccluderPolygon2D_uclq6")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=496818846]
-collision_mask = 5
+collision_mask = 6
 script = ExtResource("2_yg8ml")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949191251]
