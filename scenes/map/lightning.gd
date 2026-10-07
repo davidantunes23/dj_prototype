@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var thunder: AudioStreamPlayer = $Thunder
+
 @export var min_interval: float = 4.0
 @export var max_interval: float = 12.0
 @export var peak_energy: float = 4.0
@@ -43,3 +45,5 @@ func _strike() -> void:
 		# Slow fade out
 		tween.tween_property(light, "energy", base_energy, randf_range(0.25, 0.5)) \
 			.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_OUT)
+	await get_tree().create_timer(randf_range(0, 1.5)).timeout
+	thunder.play()
