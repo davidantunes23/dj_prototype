@@ -6,8 +6,7 @@ extends Area2D
 @onready var noise_timer = $NoiseTimer
 @onready var noise_market = $Marker2d
 
-@onready var open_sound = $OpenSound
-@onready var break_sound = $BreakSound
+@onready var timeout_noise = $TimeoutSound
 
 @onready var animation = $AnimationPlayer
 
@@ -31,15 +30,13 @@ func interact(player: Player) -> void:
 		hidden_player = player
 		animation.play("open")
 		
-		open_sound.play()
 		_rattle_closet()
 	else:
 		animation.play("exit")
-		open_sound.play()
 		_rattle_closet()
 
 func _on_noise_timer_timeout() -> void:
-	# TODO: Put closet noise here
+	timeout_noise.play()
 	SoundEvents.emit_sound(noise_market.global_position)
 
 func _hide_player():

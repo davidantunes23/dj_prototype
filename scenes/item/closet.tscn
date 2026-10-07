@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://wt1wf566v6qk" path="res://assets/closet/closet.png" id="2_4r3ns"]
 [ext_resource type="AudioStream" uid="uid://gjmf7ie6g7m8" path="res://assets/closet/open_closet.wav" id="3_u6chq"]
 [ext_resource type="AudioStream" uid="uid://n7ltn5nv2txy" path="res://assets/closet/break_closet.wav" id="4_4r3ns"]
+[ext_resource type="AudioStream" uid="uid://0fjvtyuh24tr" path="res://assets/closet/breath_closet.wav" id="5_2kqqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eum1v"]
 size = Vector2(33, 8)
@@ -221,6 +222,9 @@ stream = ExtResource("3_u6chq")
 
 [node name="BreakSound" type="AudioStreamPlayer2D" parent="." unique_id=541078647]
 stream = ExtResource("4_4r3ns")
+
+[node name="TimeoutSound" type="AudioStreamPlayer2D" parent="." unique_id=1252442958]
+stream = ExtResource("5_2kqqm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1693729396]
 libraries/ = SubResource("AnimationLibrary_18k5n")
