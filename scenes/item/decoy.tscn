@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bvvpy5vlu237r"]
 
-[ext_resource type="Texture2D" uid="uid://gyb53gt1nbby" path="res://assets/map/decoy.png" id="1_o72bl"]
 [ext_resource type="Script" uid="uid://djwh2hxmswr3u" path="res://scripts/item/decoy.gd" id="1_ypcys"]
+[ext_resource type="Texture2D" uid="uid://b4prhfbwvwpxu" path="res://assets/player/dj_player.png" id="2_ypcys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
 size = Vector2(12, 14)
@@ -10,11 +10,10 @@ size = Vector2(12, 14)
 script = ExtResource("1_ypcys")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=173312839]
-position = Vector2(-0.4, -3.1999998)
-scale = Vector2(0.2125, 0.2125)
-texture = ExtResource("1_o72bl")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ypcys")
 region_enabled = true
-region_rect = Rect2(576, 0, 32, 64)
+region_rect = Rect2(97.59966, 23.905558, 30.110611, 40.466118)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339722555]
 position = Vector2(0, -1)

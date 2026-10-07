@@ -1,0 +1,163 @@
+[gd_scene format=3 uid="uid://w1mia1i78p71"]
+
+[ext_resource type="Script" uid="uid://dng11fbiu3dd" path="res://scripts/item/bed.gd" id="1_340o3"]
+[ext_resource type="Texture2D" uid="uid://bhhm816drgbcs" path="res://assets/bed/bed.png" id="2_58eht"]
+[ext_resource type="AudioStream" uid="uid://cyggksxxw4g4y" path="res://assets/bed/break_bed.wav" id="3_dylhp"]
+[ext_resource type="AudioStream" uid="uid://dcb3kl7lkroqm" path="res://assets/bed/sheets.wav" id="4_3gpjn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
+size = Vector2(35, 39)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
+size = Vector2(58, 56)
+
+[sub_resource type="Animation" id="Animation_58eht"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BreakBed:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sheets:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ysmqm"]
+resource_name = "brake_decoy"
+length = 1.26
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BreakBed:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dylhp"]
+resource_name = "set_decoy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sheets:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3gpjn"]
+resource_name = "stay_decoy"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 3, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gpjn"]
+_data = {
+&"RESET": SubResource("Animation_58eht"),
+&"brake_decoy": SubResource("Animation_ysmqm"),
+&"set_decoy": SubResource("Animation_dylhp"),
+&"stay_decoy": SubResource("Animation_3gpjn")
+}
+
+[node name="Bed" type="Area2D" unique_id=2057781252]
+collision_layer = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817473610]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_58eht")
+hframes = 5
+region_enabled = true
+region_rect = Rect2(11.324913, 8.692978, 235.19617, 53.282562)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
+position = Vector2(-0.5, 1.5)
+shape = SubResource("RectangleShape2D_6qbq8")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=204620456]
+collision_mask = 0
+script = ExtResource("1_340o3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672598202]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_pe5hr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908184342]
+libraries/ = SubResource("AnimationLibrary_3gpjn")
+
+[node name="BreakBed" type="AudioStreamPlayer2D" parent="." unique_id=140716825]
+stream = ExtResource("3_dylhp")
+
+[node name="Sheets" type="AudioStreamPlayer2D" parent="." unique_id=1720756418]
+stream = ExtResource("4_3gpjn")
+volume_db = -15.0

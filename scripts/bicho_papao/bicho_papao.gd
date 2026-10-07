@@ -72,13 +72,6 @@ func _on_vision_area_body_exited(body: Node2D) -> void:
 		bed = null
 
 func _on_catch_area_body_entered(body: Node2D) -> void:
-	print("catch body entered")
-	if body.is_in_group("bed") && bed != null:
-		print("bed on catch area")
-		body.get_node("Area2D").remove_decoy()
-		state_machine.transition_to("Patrol")
-		return
-	
 	if is_caught or not body.is_in_group("player") or !can_see_player():
 		return
 		
@@ -102,6 +95,20 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 			else:
 				state_machine.transition_to("Patrol")
 				state_machine.set_physics_process(true)
+				
+	elif area.is_in_group("bed"):
+		var current_behavior = state_machine.current_state.name.to_lower()
+		
+		if current_behavior == "investigate" or current_behavior == "chase":
+			if area.has_decoy and not area.is_destroyed:
+				state_machine.set_physics_process(false)
+				
+				if area.has_method("break_bed"):
+					await area.break_bed()
+					
+				state_machine.transition_to("Patrol")
+				state_machine.set_physics_process(true)
+		
 	
 func _catch_player(body: Player) -> void:
 	is_caught = true
