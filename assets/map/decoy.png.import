@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu4vybyr8lkh3"
-path="res://.godot/imported/decoy_bed.png-006f018ef890fc2beda5ff3e760caaa4.ctex"
+uid="uid://gyb53gt1nbby"
+path="res://.godot/imported/decoy.png-05e099f4440561bd775be45ec136ffb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/decoy_bed.png"
-dest_files=["res://.godot/imported/decoy_bed.png-006f018ef890fc2beda5ff3e760caaa4.ctex"]
+source_file="res://assets/map/decoy.png"
+dest_files=["res://.godot/imported/decoy.png-05e099f4440561bd775be45ec136ffb6.ctex"]
 
 [params]
 

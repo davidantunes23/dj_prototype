@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drum7os0lxob2"]
 
 [ext_resource type="Script" uid="uid://bqqnfoo7k3ege" path="res://scripts/map/game_over_screen.gd" id="1_1gttd"]
-[ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/screen/blood_background.png" id="1_510vv"]
+[ext_resource type="Texture2D" uid="uid://do3uatx11ecis" path="res://assets/UI/blood_background.png" id="1_510vv"]
 
 [node name="GameOverScreen" type="Control" unique_id=1861324531]
 layout_mode = 3

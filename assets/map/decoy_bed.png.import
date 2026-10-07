@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckxt4bdwgry0h"
-path="res://.godot/imported/headphones_silhouette.png-9e8f98e743fecba2a433d91e00821fff.ctex"
+uid="uid://cu4vybyr8lkh3"
+path="res://.godot/imported/decoy_bed.png-9bf960bb31cdd370a5dfebaf9af0f923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/headphones_silhouette.png"
-dest_files=["res://.godot/imported/headphones_silhouette.png-9e8f98e743fecba2a433d91e00821fff.ctex"]
+source_file="res://assets/map/decoy_bed.png"
+dest_files=["res://.godot/imported/decoy_bed.png-9bf960bb31cdd370a5dfebaf9af0f923.ctex"]
 
 [params]
 

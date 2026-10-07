@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gyb53gt1nbby"
-path="res://.godot/imported/decoy.png-339ce768bfb66efb58b2abe8142d9087.ctex"
+uid="uid://do3uatx11ecis"
+path="res://.godot/imported/blood_background.png-1845e9b71757ca4becc2f85789f50f9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/decoy.png"
-dest_files=["res://.godot/imported/decoy.png-339ce768bfb66efb58b2abe8142d9087.ctex"]
+source_file="res://assets/UI/blood_background.png"
+dest_files=["res://.godot/imported/blood_background.png-1845e9b71757ca4becc2f85789f50f9d.ctex"]
 
 [params]
 

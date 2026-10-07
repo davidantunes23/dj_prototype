@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://2gfwylpnh5y0" path="res://scenes/player/radial_light.webp" id="3_gmlin"]
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="4_lvxji"]
 [ext_resource type="AudioStream" uid="uid://dfkvreystlm76" path="res://assets/player/walking_cut.mp3" id="5_p47bc"]
-[ext_resource type="Texture2D" uid="uid://ogp3640xxgkq" path="res://assets/keycap.png" id="6_75vfm"]
+[ext_resource type="Texture2D" uid="uid://ogp3640xxgkq" path="res://assets/UI/keycap.png" id="6_75vfm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p47bc"]
 atlas = ExtResource("2_lvxji")
@@ -561,7 +561,6 @@ scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_0owmy")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=685623581]
-zoom = Vector2(5, 5)
 position_smoothing_enabled = true
 
 [node name="AmbientRadius" type="PointLight2D" parent="." unique_id=1085767775]

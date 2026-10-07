@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do3uatx11ecis"
-path="res://.godot/imported/blood_background.png-d3f69dec15d66c4e0bfd3ac48537a252.ctex"
+uid="uid://bcotaip6qqv4i"
+path="res://.godot/imported/key.png-3fb0872b863b2aef40c6af3e79a18e52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/screen/blood_background.png"
-dest_files=["res://.godot/imported/blood_background.png-d3f69dec15d66c4e0bfd3ac48537a252.ctex"]
+source_file="res://assets/map/key.png"
+dest_files=["res://.godot/imported/key.png-3fb0872b863b2aef40c6af3e79a18e52.ctex"]
 
 [params]
 

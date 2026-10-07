@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dr8odgclvwa3d"]
+
+[ext_resource type="Texture2D" uid="uid://mu7sbky2mqja" path="res://assets/Modern House with a Horror Twist 2.0/Corridor.png" id="1_ebi63"]
+[ext_resource type="Script" uid="uid://pim8n3k7hmc3" path="res://scripts/map/door.gd" id="2_yg8ml"]
+[ext_resource type="AudioStream" uid="uid://b6fnwb7ypdc5c" path="res://assets/map/door_open_creak.mp3" id="3_7la2j"]
+[ext_resource type="AudioStream" uid="uid://bu8534b2v2xci" path="res://assets/map/door_close_creak.mp3" id="4_q71ql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwo4b"]
+size = Vector2(6, 16)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uclq6"]
+cull_mode = 2
+polygon = PackedVector2Array(0, -16, 0, 0, -6, 0, -6, -16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u48tt"]
+size = Vector2(26, 22)
+
+[node name="Node2D" type="StaticBody2D" unique_id=1247680401]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953034335]
+position = Vector2(-3.0000002, -7.9375)
+scale = Vector2(1, 1.0078125)
+texture = ExtResource("1_ebi63")
+region_enabled = true
+region_rect = Rect2(218, 96, 6, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302743802]
+position = Vector2(-3, -8)
+shape = SubResource("RectangleShape2D_cwo4b")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1280193457]
+occluder = SubResource("OccluderPolygon2D_uclq6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=496818846]
+collision_mask = 5
+script = ExtResource("2_yg8ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949191251]
+position = Vector2(-3, -8)
+shape = SubResource("RectangleShape2D_u48tt")
+debug_color = Color(0.9584492, 0.20083925, 0.117255785, 0.41960785)
+
+[node name="Open" type="AudioStreamPlayer2D" parent="." unique_id=1903045605]
+stream = ExtResource("3_7la2j")
+max_distance = 350.0
+
+[node name="Close" type="AudioStreamPlayer2D" parent="." unique_id=1276844070]
+stream = ExtResource("4_q71ql")
+volume_db = 1.0
+max_distance = 350.0

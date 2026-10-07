@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://weghclitg378"
-path="res://.godot/imported/headphones.png-d9c28a164f72ad3218a1bd5187cf6e96.ctex"
+uid="uid://dkvtl30abln1g"
+path="res://.godot/imported/escape.png-d35860e99fc420a67f68aa3c8d56961f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/headphones.png"
-dest_files=["res://.godot/imported/headphones.png-d9c28a164f72ad3218a1bd5187cf6e96.ctex"]
+source_file="res://assets/UI/escape.png"
+dest_files=["res://.godot/imported/escape.png-d35860e99fc420a67f68aa3c8d56961f.ctex"]
 
 [params]
 

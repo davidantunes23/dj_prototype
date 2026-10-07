@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ctlya6klt6vn3"]
+
+[ext_resource type="Texture2D" uid="uid://oajx3im4tswg" path="res://tmp/PNGs/DoorsandWindows.png" id="1_khyxe"]
+[ext_resource type="Script" uid="uid://pim8n3k7hmc3" path="res://scripts/map/door.gd" id="2_7mngb"]
+[ext_resource type="AudioStream" uid="uid://b6fnwb7ypdc5c" path="res://assets/map/door_open_creak.mp3" id="3_xhjs1"]
+[ext_resource type="AudioStream" uid="uid://bu8534b2v2xci" path="res://assets/map/door_close_creak.mp3" id="4_whuma"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwo4b"]
+size = Vector2(14.5, 31)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cwo4b"]
+cull_mode = 2
+polygon = PackedVector2Array(-16, -32, 0, -32, 0, -32, -16, -32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u48tt"]
+size = Vector2(22, 57)
+
+[node name="Node2D" type="StaticBody2D" unique_id=1247680401]
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1953034335]
+position = Vector2(-8, -16)
+texture = ExtResource("1_khyxe")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302743802]
+position = Vector2(-8.25, -15.5)
+shape = SubResource("RectangleShape2D_cwo4b")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1280193457]
+occluder = SubResource("OccluderPolygon2D_cwo4b")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=496818846]
+collision_mask = 5
+script = ExtResource("2_7mngb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1949191251]
+position = Vector2(-8, -15.5)
+shape = SubResource("RectangleShape2D_u48tt")
+debug_color = Color(0.9584492, 0.20083925, 0.117255785, 0.41960785)
+
+[node name="Open" type="AudioStreamPlayer2D" parent="." unique_id=1903045605]
+stream = ExtResource("3_xhjs1")
+max_distance = 350.0
+
+[node name="Close" type="AudioStreamPlayer2D" parent="." unique_id=1276844070]
+stream = ExtResource("4_whuma")
+volume_db = 1.0
+max_distance = 350.0
