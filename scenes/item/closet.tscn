@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://k7cch2k5m1mk"]
+
+[ext_resource type="Script" uid="uid://glk31kfda68a" path="res://scripts/item/closet.gd" id="1_oifui"]
+[ext_resource type="Texture2D" uid="uid://cyi7t8t5ntf5h" path="res://assets/Modern House with a Horror Twist 2.0/Modern House Bedroom 2.0.png" id="2_u6chq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4r3ns"]
+load_path = "res://.godot/imported/Modern House Bedroom 2.0.png-cf333593469c5d756ad58d3b6082eb19.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eum1v"]
+size = Vector2(32, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtoc"]
+size = Vector2(32, 30)
+
+[node name="Closet" type="Area2D" unique_id=2050555960]
+script = ExtResource("1_oifui")
+
+[node name="SpriteNormal" type="Sprite2D" parent="." unique_id=934515720]
+scale = Vector2(0.7, 0.7)
+texture = SubResource("CompressedTexture2D_4r3ns")
+region_enabled = true
+region_rect = Rect2(0.9234066, 99.05658, 46.15435, 43.096054)
+
+[node name="SpriteBroken" type="Sprite2D" parent="." unique_id=1879616321]
+visible = false
+position = Vector2(0, 10)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_u6chq")
+region_enabled = true
+region_rect = Rect2(144.68909, 98.75235, 46.80739, 71.48157)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247712530]
+position = Vector2(0, 14)
+shape = SubResource("RectangleShape2D_eum1v")
+debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
+
+[node name="NoiseTimer" type="Timer" parent="." unique_id=1296862358]
+wait_time = 10.0
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1039332799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1481527301]
+shape = SubResource("RectangleShape2D_uwtoc")

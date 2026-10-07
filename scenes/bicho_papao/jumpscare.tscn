@@ -19,3 +19,4 @@ grow_vertical = 2
 
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="." unique_id=2066618282]
 unique_name_in_owner = true
+volume_db = -80.0

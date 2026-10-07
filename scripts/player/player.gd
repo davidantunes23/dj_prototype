@@ -13,6 +13,7 @@ const PICKUP_COOLDOWN_MS = 1000.0
 @onready var footsteps = $Footsteps
 @onready var interaction_area = $InteractionArea2D
 @onready var interaction_prompt = $InteractionPrompt
+@onready var collision_shape = $CollisionShape2D
 
 var facing_direction := "down"  # remembers last facing direction for idle
 
@@ -21,6 +22,8 @@ var pickup_cooldown_time: int
 var pickup_cooldown_item: Item
 
 var catch_count: int = 0
+
+var is_hidden := false
 
 func _init() -> void:
 	pickup_cooldown_time = 0
@@ -45,7 +48,7 @@ func try_interact() -> void:
 			break
 
 func _physics_process(delta: float) -> void:
-	if catch_count >= 3: return
+	if catch_count >= 3 or is_hidden: return
 	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * SPEED
@@ -133,3 +136,15 @@ func refresh_interact_prompt() -> void:
 		interaction_prompt.visible = true
 	else:
 		interaction_prompt.visible = false
+		
+func set_hidden_state(state: bool) -> void:
+	is_hidden = state
+	
+	visible = !state
+	set_physics_process(!state)
+	collision_shape.set_deferred("disabled", state)
+	
+	if state:
+		interaction_prompt.visible = false
+	else:
+		refresh_interact_prompt()

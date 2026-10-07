@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwnsiti11y1ms" path="res://scenes/map/door.tscn" id="5_jwjuh"]
 [ext_resource type="PackedScene" uid="uid://bvvpy5vlu237r" path="res://scenes/item/decoy.tscn" id="6_fa3wc"]
 [ext_resource type="PackedScene" uid="uid://v8x6ih6okd6k" path="res://scenes/map/bed.tscn" id="7_jwjuh"]
+[ext_resource type="PackedScene" uid="uid://k7cch2k5m1mk" path="res://scenes/item/closet.tscn" id="8_eum1v"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bagh3"]
 vertices = PackedVector2Array(221, 173.65625, 162.34375, 173.65625, 162.34375, 114.34375, 221, 114.34375, 365.65625, 173.65625, 354.34375, 173.65625, 354.34375, 162.34375, 365.65625, 162.34375, 365.65625, 221.65625, 18.34375, 221.65625, 317, 205, 323, 205, 131, 205, 61.65625, 18.34375, 61.65625, 61.65625, 35, 61.65625, 18.34375, 18.34375, 35, 93, 61.65625, 93, 61.65625, 173.65625, 35, 173.65625, 93.65625, 163, 93.65625, 173.65625, 93, 173.65625, 93, 18.34375, 99, 18.34375, 99, 61, 125, 163, 131, 83, 365.65625, 18.34375, 365.65625, 131, 354.34375, 131, 354.34375, 19, 157, 18.34375, 323, 19, 365.65625, 205, 317, 40.34375, 301, 40.34375, 301, 35, 259, 35, 259, 66.34375, 285.65625, 66.34375, 285.65625, 114, 221, 114, 221, 66.34375, 253, 66.34375, 253, 35, 189.65625, 35, 157, 61, 189.65625, 83, 125, 205, 35, 205, 18.34375, 205, 29, 205, 29, 173.65625, 29, 93, 18.34375, 173.65625, 18.34375, 93, 29, 61.65625, 18.34375, 61.65625)
@@ -173,3 +174,6 @@ rotation = 1.5707964
 [node name="Decoy" parent="." unique_id=1813065219 instance=ExtResource("6_fa3wc")]
 position = Vector2(16, 95)
 collision_mask = 2
+
+[node name="Closet" parent="." unique_id=2050555960 instance=ExtResource("8_eum1v")]
+position = Vector2(224, 73)
