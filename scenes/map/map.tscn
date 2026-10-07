@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ctlya6klt6vn3" path="res://scenes/map/doorV.tscn" id="15_58ndj"]
 [ext_resource type="Texture2D" uid="uid://bd32w2ouq7fm7" path="res://tmp/PNGs/Blood spatter.png" id="15_mrjnl"]
 [ext_resource type="PackedScene" uid="uid://dr8odgclvwa3d" path="res://scenes/map/doorH.tscn" id="16_nykyp"]
+[ext_resource type="Script" uid="uid://4k1krqgurlnt" path="res://scenes/map/lightning.gd" id="20_30ska"]
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="20_uclq6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_e07uo"]
@@ -8550,6 +8551,7 @@ color = Color(0.008202021, 0.008202026, 0.00820202, 1)
 
 [node name="Lightning" type="Node2D" parent="." unique_id=158353247]
 y_sort_enabled = true
+script = ExtResource("20_30ska")
 
 [node name="PointLight2D" type="PointLight2D" parent="Lightning" unique_id=343579894]
 position = Vector2(-408.99997, -546)
@@ -8588,6 +8590,8 @@ texture = ExtResource("20_uclq6")
 position = Vector2(-145.67355, -287.00003)
 rotation = 1.5707964
 scale = Vector2(0.24743307, 0.9981346)
-energy = 1.41
+energy = 1.26
 shadow_enabled = true
 texture = ExtResource("20_uclq6")
+
+[node name="Thunder" type="AudioStreamPlayer" parent="Lightning" unique_id=1478046885]
