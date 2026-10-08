@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://oajx3im4tswg" path="res://tmp/PNGs/DoorsandWindows.png" id="1_khyxe"]
 [ext_resource type="Script" uid="uid://pim8n3k7hmc3" path="res://scripts/map/door.gd" id="2_7mngb"]
+[ext_resource type="Texture2D" uid="uid://mu7sbky2mqja" path="res://assets/Modern House with a Horror Twist 2.0/Corridor.png" id="2_a22uo"]
 [ext_resource type="AudioStream" uid="uid://b6fnwb7ypdc5c" path="res://assets/map/door_open_creak.mp3" id="3_xhjs1"]
 [ext_resource type="AudioStream" uid="uid://bu8534b2v2xci" path="res://assets/map/door_close_creak.mp3" id="4_whuma"]
 
@@ -23,6 +24,12 @@ position = Vector2(-8, -16)
 texture = ExtResource("1_khyxe")
 region_enabled = true
 region_rect = Rect2(0, 32, 16, 32)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1186639287]
+position = Vector2(-8, -35)
+texture = ExtResource("2_a22uo")
+region_enabled = true
+region_rect = Rect2(224, 90, 16, 6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302743802]
 position = Vector2(-8.25, -15.5)

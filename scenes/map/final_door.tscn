@@ -16,4 +16,4 @@ shape = SubResource("RectangleShape2D_mb8qb")
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_font_sizes/normal_font_size = 8
-text = "Door"
+text = "Exit"

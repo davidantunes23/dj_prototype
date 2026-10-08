@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var sprite: Sprite2D = $"../Sprite2D"
+@onready var topsprite: Sprite2D = $"../Sprite2D2"
 @onready var occlusion: LightOccluder2D = $"../LightOccluder2D"
 @onready var door_collision: CollisionShape2D = $"../CollisionShape2D"
 @onready var open_sound: AudioStreamPlayer2D = $"../Open"
@@ -51,6 +52,8 @@ func _set_open(value: bool) -> void:
 		close_sound.play()
 	is_open = value
 	sprite.visible = !value
+	if topsprite != null:
+		topsprite.visible = !value
 	occlusion.visible = !value
 	# Disable the blocking collision while open so the player can walk through
 	door_collision.set_deferred("disabled", value)
