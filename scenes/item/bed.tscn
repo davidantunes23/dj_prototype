@@ -6,10 +6,10 @@
 [ext_resource type="AudioStream" uid="uid://dcb3kl7lkroqm" path="res://assets/bed/sheets.wav" id="4_3gpjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
-size = Vector2(50, 52)
+size = Vector2(42, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
-size = Vector2(37, 43)
+size = Vector2(50.5, 52)
 
 [sub_resource type="Animation" id="Animation_58eht"]
 length = 0.001
@@ -141,17 +141,18 @@ region_enabled = true
 region_rect = Rect2(-0.012791634, -0.013542175, 312.1488, 64.00213)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
-position = Vector2(0, 1)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_6qbq8")
-debug_color = Color(0.866483, 0.35554737, 0, 0.41960785)
+debug_color = Color(2.7915835e-06, 0.56896055, 0.85614246, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1114880272]
 collision_mask = 6
 script = ExtResource("1_340o3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672598202]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_pe5hr")
+debug_color = Color(0.90133834, 0.31096667, 0, 0.41960785)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1908184342]
 libraries/ = SubResource("AnimationLibrary_3gpjn")
