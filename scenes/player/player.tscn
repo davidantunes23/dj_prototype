@@ -597,6 +597,7 @@ autoplay = true
 parameters/looping = true
 
 [node name="InteractionArea2D" type="Area2D" parent="." unique_id=1632682327]
+collision_layer = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea2D" unique_id=1557274257]
 shape = SubResource("CircleShape2D_6qbq8")

@@ -130,9 +130,8 @@ _data = {
 &"stay_decoy": SubResource("Animation_3gpjn")
 }
 
-[node name="Bed" type="Area2D" unique_id=2057781252]
-collision_layer = 3
-script = ExtResource("1_340o3")
+[node name="Bed" type="StaticBody2D" unique_id=1528075893]
+collision_layer = 8
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817473610]
 scale = Vector2(0.7, 0.7)
@@ -146,10 +145,11 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_6qbq8")
 debug_color = Color(0.866483, 0.35554737, 0, 0.41960785)
 
-[node name="StatickBody2D" type="StaticBody2D" parent="." unique_id=1557247841]
-collision_mask = 0
+[node name="Area2D" type="Area2D" parent="." unique_id=1114880272]
+collision_mask = 6
+script = ExtResource("1_340o3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StatickBody2D" unique_id=1672598202]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672598202]
 position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_pe5hr")
 

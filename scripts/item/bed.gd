@@ -4,10 +4,10 @@ extends Area2D
 @export var use_left_marker: bool = true
 @export var use_right_marker: bool = true
 
-@onready var sprite = $Sprite2D
-@onready var animation = $AnimationPlayer
-@onready var marker_left = $MarkerLeft
-@onready var marker_right = $MarkerRight
+@onready var sprite = $"../Sprite2D"
+@onready var animation = $"../AnimationPlayer"
+@onready var marker_left = $"../MarkerLeft"
+@onready var marker_right = $"../MarkerRight"
 
 var is_destroyed := false
 var has_decoy := false
