@@ -16,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bi6hfsar6mvle" path="res://tmp/PNGs/Modern House Living Room.png" id="12_x2kg6"]
 [ext_resource type="PackedScene" uid="uid://che5h633bo7b3" path="res://scenes/player/player.tscn" id="13_cumk7"]
 [ext_resource type="Texture2D" uid="uid://prup2i45lm8c" path="res://tmp/PNGs/Modern House Kitchen.png" id="14_mgs8m"]
+[ext_resource type="PackedScene" uid="uid://k7cch2k5m1mk" path="res://scenes/item/closet.tscn" id="15_3xi6f"]
 [ext_resource type="PackedScene" uid="uid://ctlya6klt6vn3" path="res://scenes/map/doorV.tscn" id="15_58ndj"]
 [ext_resource type="Texture2D" uid="uid://bd32w2ouq7fm7" path="res://tmp/PNGs/Blood spatter.png" id="15_mrjnl"]
 [ext_resource type="PackedScene" uid="uid://dr8odgclvwa3d" path="res://scenes/map/doorH.tscn" id="16_nykyp"]
+[ext_resource type="PackedScene" uid="uid://w1mia1i78p71" path="res://scenes/item/bed.tscn" id="16_xks3a"]
 [ext_resource type="Script" uid="uid://4k1krqgurlnt" path="res://scenes/map/lightning.gd" id="20_30ska"]
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="20_uclq6"]
 [ext_resource type="AudioStream" uid="uid://dw44mphe8pdle" path="res://assets/map/thunder.mp3" id="22_tmgcv"]
@@ -7100,19 +7102,6 @@ y_sort_enabled = true
 [node name="Closets" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=1508079483]
 y_sort_enabled = true
 
-[node name="Closet" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=6190063]
-position = Vector2(58, -88)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet" unique_id=1890442137]
-position = Vector2(0, -18)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(0, 96, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet" unique_id=2059613157]
-shape = SubResource("RectangleShape2D_u48tt")
-
 [node name="Closet2" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=1640981909]
 position = Vector2(-694, -184)
 metadata/_edit_group_ = true
@@ -7152,10 +7141,14 @@ region_rect = Rect2(0, 96, 48, 48)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet4" unique_id=421274970]
 shape = SubResource("RectangleShape2D_u48tt")
 
+[node name="Closet5" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=2050555960 instance=ExtResource("15_3xi6f")]
+position = Vector2(59, -91)
+
 [node name="Beds" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=187949281]
 y_sort_enabled = true
 
 [node name="Bed1" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=468011976]
+visible = false
 position = Vector2(152, -78)
 metadata/_edit_group_ = true
 
@@ -7220,6 +7213,9 @@ position = Vector2(18, 0)
 texture = ExtResource("5_mrjnl")
 region_enabled = true
 region_rect = Rect2(61, 0, 35, 64)
+
+[node name="Bed" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=1528075893 instance=ExtResource("16_xks3a")]
+position = Vector2(152, -78)
 
 [node name="Doors" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=2111163839]
 
