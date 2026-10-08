@@ -7658,7 +7658,7 @@ position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_d11hi")
 
 [node name="Closet2" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=931914477]
-position = Vector2(-646, -184)
+position = Vector2(-646, -180)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Closet2" unique_id=1298813760]
