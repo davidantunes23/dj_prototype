@@ -6946,12 +6946,6 @@ sources/8 = SubResource("TileSetAtlasSource_4qxv8")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u48tt"]
 size = Vector2(46, 8)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwo4b"]
-size = Vector2(42, 38)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7flj"]
-size = Vector2(65.75, 35)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lulfk"]
 size = Vector2(30, 21)
 
@@ -7147,75 +7141,17 @@ position = Vector2(59, -91)
 [node name="Beds" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=187949281]
 y_sort_enabled = true
 
-[node name="Bed1" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=468011976]
-visible = false
-position = Vector2(152, -78)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed1" unique_id=615912491]
-position = Vector2(-1, 14)
-texture = ExtResource("5_mrjnl")
-offset = Vector2(0, -18)
-region_enabled = true
-region_rect = Rect2(96, 8, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed1" unique_id=1365268266]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cwo4b")
-
-[node name="Bed2" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=763816194]
-position = Vector2(56, -560)
-collision_layer = 8
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed2" unique_id=1460454123]
-position = Vector2(-1, 14)
-texture = ExtResource("5_mrjnl")
-offset = Vector2(0, -18)
-region_enabled = true
-region_rect = Rect2(96, 8, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed2" unique_id=783743156]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cwo4b")
-
-[node name="Bed3" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=572179245]
-position = Vector2(-752, -648)
-collision_layer = 8
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed3" unique_id=845573117]
-position = Vector2(-1, 14)
-texture = ExtResource("5_mrjnl")
-offset = Vector2(0, -18)
-region_enabled = true
-region_rect = Rect2(96, 8, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Beds/Bed3" unique_id=1270361085]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_cwo4b")
-
-[node name="BigBed" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=1789632764]
-position = Vector2(-568, -272)
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/BigBed" unique_id=1795650757]
-position = Vector2(-18, 0)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(48, 0, 37, 64)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Beds/BigBed" unique_id=1414453064]
-position = Vector2(0.875, 6)
-shape = SubResource("RectangleShape2D_l7flj")
-
-[node name="Sprite2D2" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Beds/BigBed" unique_id=1049521508]
-position = Vector2(18, 0)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(61, 0, 35, 64)
-
 [node name="Bed" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=1528075893 instance=ExtResource("16_xks3a")]
 position = Vector2(152, -78)
+
+[node name="Bed2" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=562831906 instance=ExtResource("16_xks3a")]
+position = Vector2(56, -560)
+
+[node name="Bed3" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=1495361150 instance=ExtResource("16_xks3a")]
+position = Vector2(-752, -648)
+
+[node name="Bed4" parent="NavigationRegion2D/Objects/interactables/Beds" unique_id=1592676423 instance=ExtResource("16_xks3a")]
+position = Vector2(-568, -272)
 
 [node name="Doors" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=2111163839]
 
@@ -8545,6 +8481,7 @@ position = Vector2(-856, -688)
 position = Vector2(-1000, -712)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1403401776]
+visible = false
 color = Color(0.008202021, 0.008202026, 0.00820202, 1)
 
 [node name="Lightning" type="Node2D" parent="." unique_id=158353247]
