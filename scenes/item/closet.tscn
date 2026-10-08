@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://0fjvtyuh24tr" path="res://assets/closet/breath_closet.wav" id="5_2kqqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eum1v"]
-size = Vector2(33, 8)
+size = Vector2(33, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtoc"]
 size = Vector2(33, 30)
@@ -200,7 +200,7 @@ region_enabled = true
 region_rect = Rect2(96.73635, 59.669876, 190.71213, 71.49797)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247712530]
-position = Vector2(-0.5, 14)
+position = Vector2(-0.5, 15.5)
 shape = SubResource("RectangleShape2D_eum1v")
 debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 
@@ -215,7 +215,7 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_uwtoc")
 
 [node name="Marker2d" type="Marker2D" parent="." unique_id=132099405]
-position = Vector2(0, 17)
+position = Vector2(0, 25)
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=675614549]
 stream = ExtResource("3_u6chq")

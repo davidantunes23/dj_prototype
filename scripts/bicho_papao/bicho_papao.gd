@@ -81,14 +81,26 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 	var current_behavior = state_machine.current_state.name.to_lower()
 	
 	if area.is_in_group("closet"):
-		var is_target = area.global_position.distance_to(last_player_position) < 25
+		var is_target = area.global_position.distance_to(last_player_position) < 30
 		
 		if area.player_inside or (current_behavior == "investigate" and is_target):
-			print("closet")
+			var target_pos = area.global_position
+			if area.has_method("get_break_target_position"):
+				target_pos = area.get_break_target_position()
+				
+			if global_position.distance_to(target_pos) > 50.0:
+				return
+			
+			
 			var was_player_inside = area.player_inside
 			var trapped_player = area.hidden_player
 			
 			state_machine.set_physics_process(false)
+			
+			var tween = create_tween()
+			tween.tween_property(self, "global_position", target_pos, 0.2)
+			await tween.finished
+			
 			if area.has_method("break_closet"):
 				await area.break_closet()
 			

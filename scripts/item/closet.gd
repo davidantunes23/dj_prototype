@@ -54,7 +54,11 @@ func _hide_monster():
 	
 func _show_monster():
 	pass
-
+	
+func get_break_target_position() -> Vector2:
+	if noise_market:
+		return noise_market.global_position
+	return global_position
 
 func break_closet() -> void:
 	if is_destroyed: return
