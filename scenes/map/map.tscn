@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bd32w2ouq7fm7" path="res://tmp/PNGs/Blood spatter.png" id="15_mrjnl"]
 [ext_resource type="PackedScene" uid="uid://dr8odgclvwa3d" path="res://scenes/map/doorH.tscn" id="16_nykyp"]
 [ext_resource type="PackedScene" uid="uid://w1mia1i78p71" path="res://scenes/item/bed.tscn" id="16_xks3a"]
+[ext_resource type="PackedScene" uid="uid://bvvpy5vlu237r" path="res://scenes/item/decoy.tscn" id="19_78kcs"]
 [ext_resource type="Script" uid="uid://4k1krqgurlnt" path="res://scenes/map/lightning.gd" id="20_30ska"]
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="20_uclq6"]
 [ext_resource type="AudioStream" uid="uid://dw44mphe8pdle" path="res://assets/map/thunder.mp3" id="22_tmgcv"]
@@ -7158,6 +7159,23 @@ position = Vector2(-634, -576)
 
 [node name="Door5" parent="NavigationRegion2D/Objects/interactables/Doors/DoorH" unique_id=150533738 instance=ExtResource("16_nykyp")]
 position = Vector2(-938, -688)
+
+[node name="Decoys" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=672106001]
+
+[node name="Decoy" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=1813065219 instance=ExtResource("19_78kcs")]
+position = Vector2(-430, -396)
+
+[node name="Decoy2" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=342926071 instance=ExtResource("19_78kcs")]
+position = Vector2(-278, -721)
+
+[node name="Decoy3" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=1121382712 instance=ExtResource("19_78kcs")]
+position = Vector2(-758, -408)
+
+[node name="Decoy4" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=208273667 instance=ExtResource("19_78kcs")]
+position = Vector2(-1049, -663)
+
+[node name="Decoy5" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=275448659 instance=ExtResource("19_78kcs")]
+position = Vector2(-59, -263)
 
 [node name="non-interactables" type="Node2D" parent="NavigationRegion2D/Objects" unique_id=354789268]
 y_sort_enabled = true
