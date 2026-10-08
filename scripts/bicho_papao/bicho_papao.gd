@@ -83,7 +83,7 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("closet"):
 		var is_target = area.global_position.distance_to(last_player_position) < 30
 		
-		if area.player_inside or (current_behavior == "investigate" and is_target):
+		if (current_behavior == "investigate" and is_target) or current_behavior == "chase":
 			var target_pos = area.global_position
 			if area.has_method("get_break_target_position"):
 				target_pos = area.get_break_target_position()
