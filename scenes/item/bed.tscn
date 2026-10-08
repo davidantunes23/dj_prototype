@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dcb3kl7lkroqm" path="res://assets/bed/sheets.wav" id="4_3gpjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
-size = Vector2(45, 48)
+size = Vector2(50, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
 size = Vector2(37, 43)
@@ -164,7 +164,7 @@ stream = ExtResource("4_3gpjn")
 volume_db = -15.0
 
 [node name="MarkerLeft" type="Marker2D" parent="." unique_id=1296750897]
-position = Vector2(-21, 0)
+position = Vector2(-25, 0)
 
 [node name="MarkerRight" type="Marker2D" parent="." unique_id=1210345551]
-position = Vector2(21, 0)
+position = Vector2(25, 0)

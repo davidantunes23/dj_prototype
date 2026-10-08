@@ -87,19 +87,20 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 			var target_pos = area.global_position
 			if area.has_method("get_break_target_position"):
 				target_pos = area.get_break_target_position()
-				
-			if global_position.distance_to(target_pos) > 50.0:
-				return
-			
 			
 			var was_player_inside = area.player_inside
 			var trapped_player = area.hidden_player
 			
 			state_machine.set_physics_process(false)
+			footsteps.set_physics_process(false)
+			footsteps.stop()
 			
 			var tween = create_tween()
 			tween.tween_property(self, "global_position", target_pos, 0.2)
 			await tween.finished
+			
+			if animated_sprite:
+				animated_sprite.play("attack_up")
 			
 			if area.has_method("break_closet"):
 				await area.break_closet()
@@ -109,25 +110,45 @@ func _on_catch_area_area_entered(area: Area2D) -> void:
 			else:
 				state_machine.transition_to("Patrol")
 				state_machine.set_physics_process(true)
+				footsteps.set_physics_process(true)
 				
 	elif area.is_in_group("bed"):
-		var is_target = area.global_position.distance_to(last_player_position) < 25
+		var is_target = area.global_position.distance_to(last_player_position) < 30
 		
 		if current_behavior == "investigate" and is_target:
-			print("bed")
 			if area.has_decoy and not area.is_destroyed:
+				var target_pos = area.global_position
+				
+				if area.has_method("get_break_target_position"):
+					target_pos = area.get_break_target_position(global_position)
 				
 				state_machine.set_physics_process(false)
+				footsteps.set_physics_process(false)
+				footsteps.stop()
+				
+				var tween = create_tween()
+				tween.tween_property(self, "global_position", target_pos, 0.2)
+				await tween.finished
+				
+				if animated_sprite:
+					if target_pos.x < area.global_position.x:
+						animated_sprite.play("attack_right")
+					else:
+						animated_sprite.play("attack_left")
+				
 				if area.has_method("break_bed"):
 					await area.break_bed()
 					
 				state_machine.transition_to("Patrol")
 				state_machine.set_physics_process(true)
+				footsteps.set_physics_process(true)
 
 
 func _catch_player(body: Player) -> void:
 	is_caught = true
 	state_machine.set_physics_process(false)
+	footsteps.set_physics_process(false)
+	footsteps.stop()
 	
 	if body.has_method("apply_catch_penalty"):
 		body.apply_catch_penalty()
@@ -141,6 +162,7 @@ func _catch_player(body: Player) -> void:
 	player = null
 	state_machine.transition_to("Patrol")
 	state_machine.set_physics_process(true)
+	footsteps.set_physics_process(true)
 	is_caught = false
 
 func _teleport_to_furthest_waypoint(from_position: Vector2) -> int:
