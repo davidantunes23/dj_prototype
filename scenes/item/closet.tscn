@@ -7,10 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://0fjvtyuh24tr" path="res://assets/closet/breath_closet.wav" id="5_2kqqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eum1v"]
-size = Vector2(33, 11)
+size = Vector2(46.75, 15.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uwtoc"]
-size = Vector2(33, 30)
+size = Vector2(46.5, 9)
 
 [sub_resource type="Animation" id="Animation_18k5n"]
 length = 0.001
@@ -188,19 +188,17 @@ _data = {
 &"open": SubResource("Animation_2kqqm")
 }
 
-[node name="Closet" type="Area2D" unique_id=2050555960]
-script = ExtResource("1_oifui")
+[node name="Closet" type="StaticBody2D" unique_id=972840245]
+collision_layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=461969848]
-position = Vector2(0, 9.999999)
-scale = Vector2(0.7, 0.7)
 texture = ExtResource("2_4r3ns")
 hframes = 4
 region_enabled = true
 region_rect = Rect2(96.73635, 59.669876, 190.71213, 71.49797)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=247712530]
-position = Vector2(-0.5, 15.5)
+position = Vector2(-0.625, 4.25)
 shape = SubResource("RectangleShape2D_eum1v")
 debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 
@@ -208,14 +206,16 @@ debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 wait_time = 5.0
 one_shot = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1039332799]
+[node name="Area2D" type="Area2D" parent="." unique_id=410437644]
+collision_mask = 6
+script = ExtResource("1_oifui")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1481527301]
-position = Vector2(-0.5, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1481527301]
+position = Vector2(-0.25, 3)
 shape = SubResource("RectangleShape2D_uwtoc")
 
 [node name="Marker2d" type="Marker2D" parent="." unique_id=132099405]
-position = Vector2(0, 25)
+position = Vector2(0, 14)
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=675614549]
 stream = ExtResource("3_u6chq")

@@ -1,12 +1,12 @@
 extends Area2D
 
 
-@onready var noise_timer = $NoiseTimer
-@onready var noise_market = $Marker2d
+@onready var noise_timer = $"../NoiseTimer"
+@onready var noise_market = $"../Marker2d"
 
-@onready var timeout_noise = $TimeoutSound
+@onready var timeout_noise = $"../TimeoutSound"
 
-@onready var animation = $AnimationPlayer
+@onready var animation = $"../AnimationPlayer"
 
 var is_destroyed := false
 var player_inside := false
