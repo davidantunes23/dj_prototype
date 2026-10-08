@@ -6943,9 +6943,6 @@ sources/6 = SubResource("TileSetAtlasSource_4o3w1")
 sources/7 = SubResource("TileSetAtlasSource_6ek7f")
 sources/8 = SubResource("TileSetAtlasSource_4qxv8")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_u48tt"]
-size = Vector2(46, 8)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lulfk"]
 size = Vector2(30, 21)
 
@@ -6999,6 +6996,9 @@ size = Vector2(8, 7.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d11hi"]
 size = Vector2(19, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u48tt"]
+size = Vector2(46, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h70pn"]
 size = Vector2(34, 12)
@@ -7096,47 +7096,17 @@ y_sort_enabled = true
 [node name="Closets" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=1508079483]
 y_sort_enabled = true
 
-[node name="Closet2" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=1640981909]
-position = Vector2(-694, -184)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet2" unique_id=139171521]
-position = Vector2(0, -18)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(0, 96, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet2" unique_id=49849418]
-shape = SubResource("RectangleShape2D_u48tt")
-
-[node name="Closet3" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=756224843]
-position = Vector2(16, -712)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet3" unique_id=1827376900]
-position = Vector2(0, -18)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(0, 96, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet3" unique_id=1338976540]
-shape = SubResource("RectangleShape2D_u48tt")
-
-[node name="Closet4" type="StaticBody2D" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=1514506343]
-position = Vector2(-1000, -776)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet4" unique_id=550098145]
-position = Vector2(0, -18)
-texture = ExtResource("5_mrjnl")
-region_enabled = true
-region_rect = Rect2(0, 96, 48, 48)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/interactables/Closets/Closet4" unique_id=421274970]
-shape = SubResource("RectangleShape2D_u48tt")
-
-[node name="Closet5" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=2050555960 instance=ExtResource("15_3xi6f")]
+[node name="Closet1" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=2050555960 instance=ExtResource("15_3xi6f")]
 position = Vector2(59, -91)
+
+[node name="Closet4" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=972840245 instance=ExtResource("15_3xi6f")]
+position = Vector2(-694, -184)
+
+[node name="Closet2" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=940459479 instance=ExtResource("15_3xi6f")]
+position = Vector2(16, -712)
+
+[node name="Closet3" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=1244431099 instance=ExtResource("15_3xi6f")]
+position = Vector2(-1000, -776)
 
 [node name="Beds" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=187949281]
 y_sort_enabled = true
