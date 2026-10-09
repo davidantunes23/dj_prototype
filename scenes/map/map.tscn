@@ -7080,9 +7080,9 @@ tile_map_data = PackedByteArray("AAD+//7/AAAEAAYAAAD+//3/AAAEAAYAAAD+//z/AAAEAAY
 tile_set = SubResource("TileSet_cwo4b")
 
 [node name="BichoPapao" parent="NavigationRegion2D" unique_id=1463987459 instance=ExtResource("12_rqo2c")]
-position = Vector2(32, -624)
-speed = 62.0
-chase_speed = 72.0
+position = Vector2(-1000, -712)
+speed = 50.0
+chase_speed = 65.0
 patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2"), NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point5"), NodePath("../PatrolPath/Point6"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point8"), NodePath("../PatrolPath/Point9"), NodePath("../PatrolPath/Point10"), NodePath("../PatrolPath/Point11"), NodePath("../PatrolPath/Point12"), NodePath("../PatrolPath/Point13"), NodePath("../PatrolPath/Point14"), NodePath("../PatrolPath/Point15"), NodePath("../PatrolPath/Point16"), NodePath("../PatrolPath/Point17"), NodePath("../PatrolPath/Point18"), NodePath("../PatrolPath/Point19"), NodePath("../PatrolPath/Point20"), NodePath("../PatrolPath/Point21"), NodePath("../PatrolPath/Point22"), NodePath("../PatrolPath/Point23"), NodePath("../PatrolPath/Point24"), NodePath("../PatrolPath/Point25"), NodePath("../PatrolPath/Point26"), NodePath("../PatrolPath/Point27"), NodePath("../PatrolPath/Point28"), NodePath("../PatrolPath/Point29"), NodePath("../PatrolPath/Point30"), NodePath("../PatrolPath/Point31"), NodePath("../PatrolPath/Point32"), NodePath("../PatrolPath/Point33"), NodePath("../PatrolPath/Point34"), NodePath("../PatrolPath/Point35"), NodePath("../PatrolPath/Point36"), NodePath("../PatrolPath/Point37"), NodePath("../PatrolPath/Point38"), NodePath("../PatrolPath/Point39"), NodePath("../PatrolPath/Point40"), NodePath("../PatrolPath/Point41"), NodePath("../PatrolPath/Point42"), NodePath("../PatrolPath/Point43"), NodePath("../PatrolPath/Point44")])
 
 [node name="Player" parent="NavigationRegion2D" unique_id=800565437 groups=["player"] instance=ExtResource("13_cumk7")]
@@ -7127,8 +7127,10 @@ position = Vector2(-752, -648)
 position = Vector2(-568, -272)
 
 [node name="Doors" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=2111163839]
+y_sort_enabled = true
 
 [node name="DoorV" type="Node2D" parent="NavigationRegion2D/Objects/interactables/Doors" unique_id=1429129328]
+y_sort_enabled = true
 
 [node name="Door5" parent="NavigationRegion2D/Objects/interactables/Doors/DoorV" unique_id=1247680401 groups=["door"] instance=ExtResource("15_58ndj")]
 position = Vector2(-304, -401)
@@ -7146,6 +7148,7 @@ position = Vector2(-304, -192)
 position = Vector2(-192, -192)
 
 [node name="DoorH" type="Node2D" parent="NavigationRegion2D/Objects/interactables/Doors" unique_id=285707577]
+y_sort_enabled = true
 
 [node name="Door1" parent="NavigationRegion2D/Objects/interactables/Doors/DoorH" unique_id=1460606513 instance=ExtResource("16_nykyp")]
 position = Vector2(-16, -640)
@@ -8488,7 +8491,7 @@ position = Vector2(-856, -688)
 position = Vector2(-1000, -712)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1403401776]
-color = Color(0.008202021, 0.008202026, 0.00820202, 1)
+color = Color(0.003921569, 0, 0, 1)
 
 [node name="Lightning" type="Node2D" parent="." unique_id=158353247]
 y_sort_enabled = true

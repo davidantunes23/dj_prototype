@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 67
+const SPEED = 65
 const TURN_SPEED = 5.0
 const PICKUP_COOLDOWN_MS = 1000.0
 
@@ -30,7 +30,7 @@ func _init() -> void:
 	pickup_cooldown_item = null
 
 func _ready() -> void:
-	flashlight_cone.scale = Vector2(0.192, 0.2)
+	flashlight_cone.scale = Vector2(0.2, 0.2)
 	
 	interaction_area.area_entered.connect(_on_interaction_area_entered)
 	interaction_area.area_exited.connect(_on_interaction_area_exited)
@@ -48,7 +48,7 @@ func try_interact() -> void:
 			break
 
 func _physics_process(delta: float) -> void:
-	if catch_count >= 3 or is_hidden: return
+	if catch_count >= 4 or is_hidden: return
 	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	velocity = direction * SPEED
@@ -101,17 +101,19 @@ func try_drop() -> void:
 	refresh_interact_prompt()
 	
 func apply_catch_penalty():
-	if catch_count >= 3: return
+	if catch_count >= 4: return
 	
 	catch_count += 1
 	var tween = create_tween().set_parallel(true)
 	
 	match catch_count:
 		1:
-			tween.tween_property(flashlight_cone, "scale", Vector2(0.1, 0.1), 0.5)
+			tween.tween_property(flashlight_cone, "scale", Vector2(0.15, 0.15), 0.5)
 		2:
-			tween.tween_property(flashlight_cone, "energy", 0.0, 0.5)
+			tween.tween_property(flashlight_cone, "scale", Vector2(0.10, 0.10), 0.5)
 		3:
+			tween.tween_property(flashlight_cone, "energy", 0.0, 0.5)
+		4:
 			tween.tween_property(ambient_radius, "energy", 0.0, 0.5)
 			
 			await get_tree().create_timer(2.0).timeout

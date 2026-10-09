@@ -6,9 +6,9 @@ class_name MonsterFootsteps
 
 @export_group("Volume falloff")
 @export var loud_distance: float = 75     # at/below this distance -> full volume
-@export var silent_distance: float = 400  # at/beyond this distance -> silent
-@export var volume_db_near: float = 15
-@export var volume_db_far: float = -40.0
+@export var silent_distance: float = 750  # at/beyond this distance -> silent
+@export var volume_db_near: float = 25
+@export var volume_db_far: float = -20
 
 var _monster: CharacterBody2D
 var _player: Node2D

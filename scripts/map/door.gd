@@ -24,7 +24,7 @@ func interact(player: Player) -> void:
 	if is_open:
 		return
 	_set_open(true)
-	SoundEvents.emit_sound(global_position)
+	SoundEvents.emit_sound(global_position, "door")
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):

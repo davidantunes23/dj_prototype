@@ -23,9 +23,19 @@ func exit() -> void:
 	if SoundEvents.player_made_sound.is_connected(_on_player_made_sound):
 		SoundEvents.player_made_sound.disconnect(_on_player_made_sound)
 
-func _on_player_made_sound(sound_position: Vector2) -> void:
-	monster.last_player_position = sound_position
-	state_machine.transition_to("Investigate")
+func _on_player_made_sound(sound_position: Vector2, sound_source: String) -> void:
+	var probability
+	if sound_source == "door":
+		var distance = monster.global_position.distance_to(sound_position)
+
+		var max_distance = 800
+		probability = clampf(1.0 - distance / max_distance, 0.0, 1.0)
+	else:
+		probability = 1
+	
+	if randf() < probability:
+		monster.last_player_position = sound_position
+		state_machine.transition_to("Investigate")
 
 func _load_waypoints() -> void:
 	waypoints.clear()

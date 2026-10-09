@@ -35,7 +35,7 @@ func interact(player: Player) -> void:
 
 func _on_noise_timer_timeout() -> void:
 	timeout_noise.play()
-	SoundEvents.emit_sound(noise_market.global_position)
+	SoundEvents.emit_sound(noise_market.global_position, "closet")
 
 func _hide_player():
 	if hidden_player:

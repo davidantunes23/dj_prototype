@@ -45,7 +45,7 @@ func interact(player: Player) -> void:
 			print("marker_right")
 		
 		# If global_position BUG
-		SoundEvents.emit_sound(sound_pos)
+		SoundEvents.emit_sound(sound_pos, "bed")
 
 func get_break_target_position(monster_pos: Vector2) -> Vector2:
 	if use_left_marker and use_right_marker:

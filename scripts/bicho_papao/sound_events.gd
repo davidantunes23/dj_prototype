@@ -5,7 +5,7 @@ extends Node
 # noise here" without needing a direct reference to every monster in the
 # scene, and without the monster needing a reference to the player.
 
-signal player_made_sound(sound_position: Vector2)
+signal player_made_sound(sound_position: Vector2, sound_source: String)
 
-func emit_sound(sound_position: Vector2) -> void:
-	player_made_sound.emit(sound_position)
+func emit_sound(sound_position: Vector2, sound_source: String) -> void:
+	player_made_sound.emit(sound_position, sound_source)
