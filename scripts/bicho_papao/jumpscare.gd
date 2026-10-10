@@ -25,6 +25,8 @@ func trigger(catch_count: int) -> void:
 	is_active = true
 	visible = true
 	
+	audio_player.play()
+	
 	if catch_count == 1:
 		image_rect.scale = Vector2(1.0, 1.0)
 		image_rect.modulate = Color(0.8, 0.8, 0.8, 1.0)
@@ -41,8 +43,8 @@ func trigger(catch_count: int) -> void:
 		image_rect.scale = Vector2(3.0, 3.0)
 		image_rect.modulate = Color(0.4, 0.0, 0.0, 1.0)
 		
-	audio_player.play()
 	await get_tree().create_timer(display_duration).timeout
+	audio_player.stop()
 	
 	visible = false
 	is_active = false

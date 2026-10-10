@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b0ocr8wxqqn2h" path="res://scripts/bicho_papao/jumpscare.gd" id="1_takq4"]
 [ext_resource type="Texture2D" uid="uid://ccmt3kkl2g30y" path="res://assets/bicho_papao/jumpscare.png" id="2_wg3b0"]
-[ext_resource type="AudioStream" uid="uid://cptp67arl7td8" path="res://assets/bicho_papao/jumpscare.mp3" id="3_46017"]
+[ext_resource type="AudioStream" path="res://assets/bicho_papao/jumpscare.mp3" id="3_46017"]
+[ext_resource type="AudioStream" uid="uid://b6hpul200h67u" path="res://assets/bicho_papao/jumpscare.wav" id="4_46017"]
 
 [node name="Jumpscare" type="CanvasLayer" unique_id=1858211321]
 script = ExtResource("1_takq4")
@@ -19,4 +20,5 @@ grow_vertical = 2
 
 [node name="JumpscareAudio" type="AudioStreamPlayer" parent="." unique_id=2066618282]
 unique_name_in_owner = true
-volume_db = -80.0
+stream = ExtResource("4_46017")
+pitch_scale = 0.4
