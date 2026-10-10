@@ -154,7 +154,7 @@ func _catch_player(body: Player) -> void:
 		body.apply_catch_penalty()
 
 	print("here")
-	await Jumpscare.trigger()
+	await Jumpscare.trigger(body.catch_count)
 	print("awop")
 
 	var furthest_waypoint_index = _teleport_to_furthest_waypoint(body.global_position)
