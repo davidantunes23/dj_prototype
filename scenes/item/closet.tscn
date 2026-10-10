@@ -203,7 +203,7 @@ shape = SubResource("RectangleShape2D_eum1v")
 debug_color = Color(0.74876696, 0.46101063, 1.92523e-07, 0.41960785)
 
 [node name="NoiseTimer" type="Timer" parent="." unique_id=1296862358]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=410437644]
@@ -219,12 +219,15 @@ position = Vector2(0, 14)
 
 [node name="OpenSound" type="AudioStreamPlayer2D" parent="." unique_id=675614549]
 stream = ExtResource("3_u6chq")
+volume_db = 12.0
 
 [node name="BreakSound" type="AudioStreamPlayer2D" parent="." unique_id=541078647]
 stream = ExtResource("4_4r3ns")
+volume_db = 12.0
 
 [node name="TimeoutSound" type="AudioStreamPlayer2D" parent="." unique_id=1252442958]
 stream = ExtResource("5_2kqqm")
+volume_db = 15.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1693729396]
 libraries/ = SubResource("AnimationLibrary_18k5n")
