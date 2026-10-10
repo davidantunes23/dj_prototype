@@ -27,7 +27,7 @@ func trigger(catch_count: int) -> void:
 	
 	if catch_count == 1:
 		image_rect.scale = Vector2(1.0, 1.0)
-		image_rect.modulate = Color(0.8, 0.8, 0.8, 0.9)
+		image_rect.modulate = Color(0.8, 0.8, 0.8, 1.0)
 		
 	elif catch_count == 2:
 		image_rect.scale = Vector2(1.3, 1.3)
