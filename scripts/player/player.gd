@@ -12,7 +12,7 @@ const PICKUP_COOLDOWN_MS = 1000.0
 @onready var item_holder = $ItemHolder
 @onready var footsteps = $Footsteps
 @onready var interaction_area = $InteractionArea2D
-@onready var interaction_prompt = $InteractionPrompt
+@onready var interaction_prompt = get_tree().current_scene.get_node("CanvasLayer/InteractionPrompt")
 @onready var collision_shape = $CollisionShape2D
 
 var facing_direction := "down"  # remembers last facing direction for idle
@@ -40,6 +40,8 @@ func _process(_delta: float) -> void:
 		try_drop()
 	if Input.is_action_just_pressed("interact"):
 		try_interact()
+	if interaction_prompt:
+		interaction_prompt.global_position = (get_global_transform_with_canvas().origin + Vector2(4, -100))
 
 func try_interact() -> void:
 	for area in interaction_area.get_overlapping_areas():

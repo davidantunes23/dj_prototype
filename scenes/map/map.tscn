@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://b0p782wl3pcce" path="res://scenes/player/torch_light.png" id="20_uclq6"]
 [ext_resource type="AudioStream" uid="uid://dw44mphe8pdle" path="res://assets/map/thunder.mp3" id="22_tmgcv"]
 [ext_resource type="AudioStream" uid="uid://dgrax4g1iaesw" path="res://assets/map/rain.mp3" id="23_omedl"]
+[ext_resource type="Texture2D" uid="uid://ogp3640xxgkq" path="res://assets/UI/keycap.png" id="28_25aov"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_e07uo"]
 vertices = PackedVector2Array(-4, -660, -4, -636, -124, -636, -148, -642, -124, -660, -294, -630, -188, -642, -184, -625, -231, -625, -652, -724, -652, -596, -663, -633, -663, -663, 129, -254, 129, -196, 126, -204, 126, -249, -136, -561, -124, -556, -299.92188, -556, -183, -561, -236, -562, -276, -562, -678, -300, -678, -266, -684, -276, -684, -303.78906, -697, -663, -688, -682, -284, -374, -284, -242, -308, -242, -328, -293.5, -328, -325, -302, -374, -184, -593, -183, -593, -703, -599, -719, -616, -697, -633, -652, -572, -719, -678, 70, -254, 72, -249, -688, -710, -753, -724, -720, -710, -720, -682, -753, -708, -136, -593, 57, -196, 72, -204, -785, -678, -831, -708, -188, -680, -294, -658, -205, -676.5, -703, -569, -652, -556, -668, -556, -785, -616, -800, -598, -815, -617, -815, -647, -852, -708, -849, -713, -849, -647, -852, -684, -737, -599, -737, -569, -800, -570, -172.82813, -331, -172.79688, -328, -191, -328, -228, -331, -228, -253, -191, -296, -213, -253, -956, -684, -956, -668.1094, -1044, -668.8672, -1035, -760, -965, -760, -172.53906, -296, -172.47656, -288.5, -190, -288.5, -190, -255, -193, -242, -205, -242, -172.20313, -255, -172.10156, -242, -796, -427.5, -816, -440, -816, -451.6875, -692, -450.9297, -764, -428, 65, -259.6172, 70, -259.64063, 65, -257, 119, -46, 163.14844, -46, 163.04688, -18, 34, -18, 34, -60, 93, -72, 135, -185, 163.67188, -185, 163.53125, -146, 135, -158, 4, -146, 57, -158, -316, -180, -308, -180, -20, -146, -116, -156, -100, -259.07813, -59, -259.21875, -59, -254, -100, -254, -284, -788, -284, -777, -325, -777, -358, -788, -358, -759, -325, -742, -331, -718, -331, -689, -284, -742, -284, -692, -260, -692, -260, -676.5, -4, -696, 51, -696, 68, -590, 23, -590, 51, -708, 52, -708, 52, -704, 68, -704, 23, -556, -4, -556, -148, -680, -124, -692, -205, -692, -236, -600, -240, -600, -240, -625, -287, -593, -276, -593, -324, -556, -344, -333, -308, -388, -302, -388, -344, -325, -317, -388, -368, -333, -368, -341, -348, -380, -400, -341, -400, -333, -416, -333, -452, -380, -416, -325, -432, -325, -432, -293.5, -420, -293.5, -420, -288, -436, -252, -340, -288, -340, -293.5, -324, -242, -213, -242, -204, -207.75781, -205, -207.78125, -196, -208, -193, -208, -196, -180, -204, -180, -8, -254, -8, -252.5, 47, -252.5, 47, -257, -323, -230, -324, -230, -436, -242, -452, -252, -348, -388, -317, -414, -321, -414, -321, -432, -324, -432, -388, -556, -388, -572, -668, -304.0703, -668, -304, -676, -304, -676, -300, -764, -380, -780, -380, -796, -394, -787, -324, -780, -324, -780, -244, -708, -244, -708, -276, -635, -266, -635, -270.5, -612, -270.5, -612, -236.5, -540, -236.5, -540, -180, -611, -200, 34, -68, 34, -72, 93, -79.5, 119, -79.5, 4, -68, 4, -60, 4, -18, -20, -18, -116, -146, -540, -156, -611, -168, -540, -140, -708, -140, -708, -168, -708, -200, -708, -220, -804, -220, -804, -324, -796, -324, -787, -351.60938, -796, -351.78906, -804, -380, -852, -380, -852, -394, -852, -427.5, -852, -440, -1044, -772, -1035, -772, -965, -772, -956, -772, -956, -708, -852, -724, -849, -724, -831, -713, -852, -556, -849, -617, -633, -596, -633, -593, -599, -593, -599, -596, -433, -596, -433, -593, -399, -593, -399, -596, -388, -596, -388, -718, -388, -759, -362, -658, -388, -689, -362, -630, -300.89844, -414, -308, -414, -668, -308, -116.14844, -180, -115.21094, -254, -316, -207.78906, -323, -207.90625, -692, -303.9297, -692, -304.29688, -804, -351.9297, -780, -351.82813, -692, -308, -692, -428, -231, -593, -287, -625, -692, -556, -832, -570, -832, -598)
@@ -7085,11 +7086,6 @@ speed = 50.0
 chase_speed = 65.0
 patrol_points = Array[NodePath]([NodePath("../PatrolPath/Point1"), NodePath("../PatrolPath/Point2"), NodePath("../PatrolPath/Point3"), NodePath("../PatrolPath/Point4"), NodePath("../PatrolPath/Point5"), NodePath("../PatrolPath/Point6"), NodePath("../PatrolPath/Point7"), NodePath("../PatrolPath/Point8"), NodePath("../PatrolPath/Point9"), NodePath("../PatrolPath/Point10"), NodePath("../PatrolPath/Point11"), NodePath("../PatrolPath/Point12"), NodePath("../PatrolPath/Point13"), NodePath("../PatrolPath/Point14"), NodePath("../PatrolPath/Point15"), NodePath("../PatrolPath/Point16"), NodePath("../PatrolPath/Point17"), NodePath("../PatrolPath/Point18"), NodePath("../PatrolPath/Point19"), NodePath("../PatrolPath/Point20"), NodePath("../PatrolPath/Point21"), NodePath("../PatrolPath/Point22"), NodePath("../PatrolPath/Point23"), NodePath("../PatrolPath/Point24"), NodePath("../PatrolPath/Point25"), NodePath("../PatrolPath/Point26"), NodePath("../PatrolPath/Point27"), NodePath("../PatrolPath/Point28"), NodePath("../PatrolPath/Point29"), NodePath("../PatrolPath/Point30"), NodePath("../PatrolPath/Point31"), NodePath("../PatrolPath/Point32"), NodePath("../PatrolPath/Point33"), NodePath("../PatrolPath/Point34"), NodePath("../PatrolPath/Point35"), NodePath("../PatrolPath/Point36"), NodePath("../PatrolPath/Point37"), NodePath("../PatrolPath/Point38"), NodePath("../PatrolPath/Point39"), NodePath("../PatrolPath/Point40"), NodePath("../PatrolPath/Point41"), NodePath("../PatrolPath/Point42"), NodePath("../PatrolPath/Point43"), NodePath("../PatrolPath/Point44")])
 
-[node name="Player" parent="NavigationRegion2D" unique_id=800565437 groups=["player"] instance=ExtResource("13_cumk7")]
-position = Vector2(104, -72)
-scale = Vector2(1.2, 1.2)
-collision_layer = 2
-
 [node name="Objects" type="Node2D" parent="NavigationRegion2D" unique_id=1641954606]
 y_sort_enabled = true
 
@@ -8586,3 +8582,16 @@ stream = ExtResource("22_tmgcv")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1087718163]
 stream = ExtResource("23_omedl")
 autoplay = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=779257933]
+layer = 2
+
+[node name="InteractionPrompt" type="Sprite2D" parent="CanvasLayer" unique_id=1210865772]
+visible = false
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("28_25aov")
+
+[node name="Player" parent="." unique_id=800565437 groups=["player"] instance=ExtResource("13_cumk7")]
+position = Vector2(137, -47)
+scale = Vector2(1.2, 1.2)
+collision_layer = 2
