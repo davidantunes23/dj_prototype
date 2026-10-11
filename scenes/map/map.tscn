@@ -7165,6 +7165,7 @@ position = Vector2(-634, -576)
 position = Vector2(-938, -688)
 
 [node name="FinalDoor" type="Node2D" parent="NavigationRegion2D/Objects/interactables/Doors" unique_id=776485730]
+y_sort_enabled = true
 
 [node name="Door" parent="NavigationRegion2D/Objects/interactables/Doors/FinalDoor" unique_id=321878889 instance=ExtResource("19_2kc6l")]
 position = Vector2(-17, -21)
