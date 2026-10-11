@@ -2,13 +2,16 @@
 
 [ext_resource type="Script" uid="uid://b0ocr8wxqqn2h" path="res://scripts/bicho_papao/jumpscare.gd" id="1_takq4"]
 [ext_resource type="Texture2D" uid="uid://ccmt3kkl2g30y" path="res://assets/bicho_papao/jumpscare.png" id="2_wg3b0"]
-[ext_resource type="AudioStream" path="res://assets/bicho_papao/jumpscare.mp3" id="3_46017"]
 [ext_resource type="AudioStream" uid="uid://b6hpul200h67u" path="res://assets/bicho_papao/jumpscare.wav" id="4_46017"]
 
+[sub_resource type="Resource" id="Resource_wg3b0"]
+metadata/__load_path__ = "res://assets/bicho_papao/jumpscare.mp3"
+
 [node name="Jumpscare" type="CanvasLayer" unique_id=1858211321]
+layer = 3
 script = ExtResource("1_takq4")
 jumpscare_image = ExtResource("2_wg3b0")
-jumpscare_sound = ExtResource("3_46017")
+jumpscare_sound = SubResource("Resource_wg3b0")
 
 [node name="JumpscareImage" type="TextureRect" parent="." unique_id=2101642993]
 unique_name_in_owner = true

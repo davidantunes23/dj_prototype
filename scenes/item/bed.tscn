@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dcb3kl7lkroqm" path="res://assets/bed/sheets.wav" id="4_3gpjn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
-size = Vector2(42, 50)
+size = Vector2(43, 50)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pe5hr"]
 size = Vector2(50.5, 52)
@@ -141,7 +141,7 @@ region_enabled = true
 region_rect = Rect2(-0.012791634, -0.013542175, 312.1488, 64.00213)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611189135]
-position = Vector2(-1, 0)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_6qbq8")
 debug_color = Color(2.7915835e-06, 0.56896055, 0.85614246, 0.41960785)
 
@@ -165,7 +165,7 @@ stream = ExtResource("4_3gpjn")
 volume_db = -15.0
 
 [node name="MarkerLeft" type="Marker2D" parent="." unique_id=1296750897]
-position = Vector2(-25, 0)
+position = Vector2(-26, 0)
 
 [node name="MarkerRight" type="Marker2D" parent="." unique_id=1210345551]
 position = Vector2(25, 0)

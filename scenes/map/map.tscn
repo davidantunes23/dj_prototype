@@ -7179,6 +7179,7 @@ shadow_enabled = true
 texture = ExtResource("20_uclq6")
 
 [node name="Decoys" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=672106001]
+y_sort_enabled = true
 
 [node name="Decoy" parent="NavigationRegion2D/Objects/interactables/Decoys" unique_id=1813065219 instance=ExtResource("19_78kcs")]
 position = Vector2(-430, -396)

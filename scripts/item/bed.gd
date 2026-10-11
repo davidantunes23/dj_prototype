@@ -37,12 +37,6 @@ func interact(player: Player) -> void:
 		animation.play("set_decoy")
 		
 		var sound_pos = global_position
-		if use_left_marker and marker_left != null:
-			sound_pos = marker_left.global_position
-			print("marker_left")
-		elif use_right_marker and marker_right != null:
-			sound_pos = marker_right.global_position
-			print("marker_right")
 		
 		# If global_position BUG
 		SoundEvents.emit_sound(sound_pos, "bed")

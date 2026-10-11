@@ -90,6 +90,7 @@ func _get_closest_by_distance() -> int:
 func physics_update(_delta: float) -> void:
 	# Transition Check: If player is spotted, switch to Chase state
 	if monster.can_see_player():
+		monster.last_player_position = monster.player.global_position
 		state_machine.transition_to("Chase")
 		return
 

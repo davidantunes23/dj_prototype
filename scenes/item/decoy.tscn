@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://djwh2hxmswr3u" path="res://scripts/item/decoy.gd" id="1_ypcys"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qbq8"]
-size = Vector2(12, 14)
+size = Vector2(14, 17)
 
 [node name="Decoy" type="Area2D" unique_id=1813065219]
 collision_mask = 2
@@ -17,7 +17,7 @@ region_enabled = true
 region_rect = Rect2(578.00806, 23.760729, 30.110611, 40.466118)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1339722555]
-position = Vector2(0, -1)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_6qbq8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
