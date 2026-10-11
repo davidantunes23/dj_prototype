@@ -6950,9 +6950,6 @@ sources/8 = SubResource("TileSetAtlasSource_4qxv8")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lulfk"]
 size = Vector2(30, 21)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly181"]
-size = Vector2(31, 9)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kh0q7"]
 size = Vector2(40, 5)
 
@@ -6964,6 +6961,9 @@ size = Vector2(23, 49)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dksfx"]
 size = Vector2(44, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly181"]
+size = Vector2(31, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xr5ep"]
 size = Vector2(30, 5)
@@ -7107,6 +7107,9 @@ position = Vector2(16, -712)
 [node name="Closet3" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=1244431099 instance=ExtResource("15_3xi6f")]
 position = Vector2(-1000, -776)
 
+[node name="Closet5" parent="NavigationRegion2D/Objects/interactables/Closets" unique_id=697262190 instance=ExtResource("15_3xi6f")]
+position = Vector2(14, -269)
+
 [node name="Beds" type="Node2D" parent="NavigationRegion2D/Objects/interactables" unique_id=187949281]
 y_sort_enabled = true
 
@@ -7224,21 +7227,6 @@ region_rect = Rect2(196, 248, 40, 32)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/non-interactables/Table" unique_id=650547001]
 position = Vector2(-5, 5.5)
 shape = SubResource("RectangleShape2D_lulfk")
-
-[node name="Cabinet" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=1355671216]
-position = Vector2(12, -272)
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="NavigationRegion2D/Objects/non-interactables/Cabinet" unique_id=1481041963]
-position = Vector2(7.5, -12.25)
-scale = Vector2(0.6875, 0.6875)
-texture = ExtResource("3_cumk7")
-region_enabled = true
-region_rect = Rect2(0, 232, 48, 56)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/Objects/non-interactables/Cabinet" unique_id=577677765]
-position = Vector2(7.5, 3)
-shape = SubResource("RectangleShape2D_ly181")
 
 [node name="BedsideTable" type="StaticBody2D" parent="NavigationRegion2D/Objects/non-interactables" unique_id=228433974]
 position = Vector2(107, -94)
