@@ -38,10 +38,11 @@ theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 24
 bbcode_enabled = true
 text = "[center]
-[b]W A S D[/b] - Move
-[b]Mouse[/b] - Aim Flashlight
-[b]Q[/b] - Drop Item
-[b]E[/b] - Interact with Doors/Beds
+[b]W A S D[/b] - Move.
+[b]Mouse[/b] - Aim Flashlight.
+[b]Q[/b] - Drop Item.
+[b]E[/b] - Interact with Doors/Beds.
+[b]Esc[/b] - Pause Game.
 
 
 [pulse freq=1.0 color=#ffffff40][b]Press ENTER to wake up.[/b][/pulse]

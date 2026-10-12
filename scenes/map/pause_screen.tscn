@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cmjpxwu6f7jwi"]
+
+[ext_resource type="Script" uid="uid://pbkuaipv8ij5" path="res://scripts/map/pause_screen.gd" id="1_vd8ff"]
+
+[node name="PauseScreen" type="CanvasLayer" unique_id=533434293]
+process_mode = 3
+script = ExtResource("1_vd8ff")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=737213695]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1471890659]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "[center][b][font_size=38]GAME PAUSED.[/font_size][/b][/center]
+
+[center][pulse freq=1.0 color=#ffffff40][b]Press ENTER to continue...[/b][/pulse][/center]"
+horizontal_alignment = 1
+vertical_alignment = 1
