@@ -28,4 +28,4 @@ func drop(position: Vector2) -> void:
 
 	reparent(parent_initial, false)
 	self.transform = transform_initial
-	self.position = position + Vector2(8.0, 8.0)
+	self.position = position + Vector2(1.0, 1.0)
