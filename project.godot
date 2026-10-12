@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DJ Prototype"
-run/main_scene="uid://cyw8mwronowfl"
+run/main_scene="uid://o7gs7c8db5pe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
