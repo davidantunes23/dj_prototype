@@ -8433,7 +8433,7 @@ position = Vector2(-8, -160)
 position = Vector2(-8, -48)
 
 [node name="Point30" type="Marker2D" parent="NavigationRegion2D/PatrolPath" unique_id=1727918732]
-position = Vector2(96, -48)
+position = Vector2(112, -64)
 
 [node name="Point31" type="Marker2D" parent="NavigationRegion2D/PatrolPath" unique_id=1709825423]
 position = Vector2(-8, -48)
@@ -8478,6 +8478,7 @@ position = Vector2(-856, -688)
 position = Vector2(-1000, -712)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1403401776]
+visible = false
 color = Color(0.003921569, 0, 0, 1)
 
 [node name="Lightning" type="Node2D" parent="." unique_id=158353247]

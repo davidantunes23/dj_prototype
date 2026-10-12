@@ -93,7 +93,11 @@ func physics_update(_delta: float) -> void:
 		monster.last_player_position = monster.player.global_position
 		state_machine.transition_to("Chase")
 		return
-
+		
+	elif monster.can_see_decoy():
+		print("can see decoy")
+		SoundEvents.emit_sound(monster.bed.global_position, "bed")
+		
 	if waypoints.is_empty():
 		return
 

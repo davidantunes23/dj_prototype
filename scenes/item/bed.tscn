@@ -131,7 +131,7 @@ _data = {
 }
 
 [node name="Bed" type="StaticBody2D" unique_id=1528075893]
-collision_layer = 8
+collision_layer = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1817473610]
 scale = Vector2(0.8, 0.8)
@@ -146,6 +146,7 @@ shape = SubResource("RectangleShape2D_6qbq8")
 debug_color = Color(2.7915835e-06, 0.56896055, 0.85614246, 0.41960785)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1114880272]
+collision_layer = 3
 collision_mask = 6
 script = ExtResource("1_340o3")
 

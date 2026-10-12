@@ -58,11 +58,33 @@ func can_see_player() -> bool:
 		return collider == player
 		
 	return false
+	
+func can_see_decoy() -> bool:
+	if not is_instance_valid(bed):
+		print("bed instance not valid")
+		return false
+	
+	if not bed.get_node("Area2D").has_decoy:
+		print("no decoy")
+		return false
+		
+	# Point the RayCast towards the player's center
+	los_ray.global_position = global_position
+	los_ray.target_position = los_ray.to_local(bed.global_position)
+	los_ray.force_raycast_update()
+	
+	if los_ray.is_colliding():
+		print("ray is colliding")
+		var collider = los_ray.get_collider()
+		print (collider == bed)
+		return collider == bed
+	print("ray not colliding")
+	return false
 
 func _on_vision_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player = body
-	elif body.is_in_group("bed"):
+	elif body.get_node("Area2D").is_in_group("bed"):
 		bed = body
 
 func _on_vision_area_body_exited(body: Node2D) -> void:
