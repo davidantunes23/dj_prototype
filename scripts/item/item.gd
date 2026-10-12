@@ -21,11 +21,10 @@ func get_type() -> String:
 
 func attach(player: Player) -> void:
 	reparent(player.get_item_holder(), false)
-	position = Vector2.ZERO
+	self.position = Vector2.ZERO
 
 func drop(position: Vector2) -> void:
 	held = false
 
-	reparent(parent_initial, false)
-	self.transform = transform_initial
-	self.position = position + Vector2(1.0, 1.0)
+	reparent(parent_initial, true)
+	self.scale = transform_initial.get_scale()

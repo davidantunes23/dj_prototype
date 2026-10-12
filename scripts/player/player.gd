@@ -98,7 +98,7 @@ func try_drop() -> void:
 	pickup_cooldown_time = Time.get_ticks_msec()
 	pickup_cooldown_item = hand
 
-	hand.drop(position)
+	hand.drop(global_position)
 	hand = null
 	refresh_interact_prompt()
 	
